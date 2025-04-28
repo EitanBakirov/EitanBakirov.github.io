@@ -5,7 +5,6 @@ export const bio = [
   "Eager to keep learning, building, and growing in the world of AI and data science.",
 ];
 
-
 export const skills = [
   "Python, SQL, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn",
   "Machine Learning, Deep Learning, Data Analysis, Data Visualization",
@@ -13,7 +12,6 @@ export const skills = [
   "FastAPI, Streamlit, Docker, Git",
   "Problem Solving, Research, Experimentation, Model Evaluation",
 ];
-
 
 export const experience = [
   {
@@ -71,7 +69,6 @@ export const experience = [
     icon: "user-shield",
   },
 ];
-
 
 export const education = [
   {
