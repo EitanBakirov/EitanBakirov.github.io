@@ -2220,7 +2220,7 @@ hr {
 
 .dark-mode #darkModeToggle {
   border-color: #2c98f0;
-  color: #fff;
+  color: #000;
 }
 
 .dark-mode #darkModeToggle:hover {
