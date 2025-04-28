@@ -595,11 +595,12 @@ body.offcanvas .colorlib-nav-toggle {
 	text-align: center;
 }
 
+
 .author-img {
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
-	position: relative;
+	position: center;
 }
 
 .colorlib-heading {
