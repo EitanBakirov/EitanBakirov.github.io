@@ -1,71 +1,46 @@
 (function () {
   "use strict";
 
+  // Detect if the user is on a mobile device
   var isMobile = {
     any: function () {
       return /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
     },
   };
 
+  // Set full height sections only on desktop
   var fullHeight = function () {
     if (!isMobile.any()) {
-      $(".js-fullheight").css("height", $(window).height());
-      $(window).resize(function () {
+      var setHeight = function () {
         $(".js-fullheight").css("height", $(window).height());
-      });
+      };
+      setHeight();
+      $(window).resize(setHeight);
     }
   };
 
-  var counterWayPoint = function () {
-    if ($("#colorlib-counter").length > 0) {
-      $("#colorlib-counter").waypoint(
-        function (direction) {
-          if (direction === "down" && !$(this.element).hasClass("animated")) {
-            setTimeout(counter, 400);
-            $(this.element).addClass("animated");
-          }
-        },
-        { offset: "90%" }
-      );
-    }
-  };
-
+  // Animate content when scrolling down
   var contentWayPoint = function () {
-    var i = 0;
     $(".animate-box").waypoint(
       function (direction) {
         if (direction === "down" && !$(this.element).hasClass("animated")) {
-          i++;
-          $(this.element).addClass("item-animate");
-          setTimeout(function () {
-            $("body .animate-box.item-animate").each(function (k) {
-              var el = $(this);
-              setTimeout(
-                function () {
-                  var effect = el.data("animate-effect");
-                  el.addClass(effect ? `${effect} animated` : "fadeInUp animated");
-                  el.removeClass("item-animate");
-                },
-                k * 200,
-                "easeInOutExpo"
-              );
-            });
-          }, 100);
+          $(this.element).addClass("fadeInUp animated");
         }
       },
       { offset: "85%" }
     );
   };
 
+  // Toggle the mobile burger menu
   var burgerMenu = function () {
     $(".js-colorlib-nav-toggle").on("click", function (event) {
       event.preventDefault();
-      var $this = $(this);
       $("body").toggleClass("offcanvas");
-      $this.toggleClass("active");
+      $(this).toggleClass("active");
     });
   };
 
+  // Close mobile menu when clicking outside or scrolling
   var mobileMenuOutsideClick = function () {
     $(document).click(function (e) {
       var container = $("#colorlib-aside, .js-colorlib-nav-toggle");
@@ -83,73 +58,64 @@
     });
   };
 
+  // Smooth scroll to sections
   var clickMenu = function () {
     $('#navbar a:not([class="external"])').click(function (event) {
-      var section = $(this).data("nav-section"),
-        navbar = $("#navbar");
-
+      var section = $(this).data("nav-section");
       if ($('[data-section="' + section + '"]').length) {
         $("html, body").animate(
-          {
-            scrollTop: $('[data-section="' + section + '"]').offset().top - 55,
-          },
+          { scrollTop: $('[data-section="' + section + '"]').offset().top - 55 },
           500
         );
       }
-
-      if (navbar.is(":visible")) {
-        navbar.removeClass("in");
-        navbar.attr("aria-expanded", "false");
-        $(".js-colorlib-nav-toggle").removeClass("active");
-      }
-
       event.preventDefault();
-      return false;
     });
   };
 
-  var navActive = function (section) {
-    var $el = $("#navbar > ul");
-    $el.find("li").removeClass("active");
-    $el.each(function () {
-      $(this)
-        .find('a[data-nav-section="' + section + '"]')
-        .closest("li")
-        .addClass("active");
-    });
-  };
-
+  // Highlight active navigation link while scrolling
   var navigationSection = function () {
     var $section = $("section[data-section]");
-
     $section.waypoint(
       function (direction) {
         if (direction === "down") {
           navActive($(this.element).data("section"));
         }
       },
-      {
-        offset: "150px",
-      }
+      { offset: "150px" }
     );
-
     $section.waypoint(
       function (direction) {
         if (direction === "up") {
           navActive($(this.element).data("section"));
         }
       },
-      {
-        offset: function () {
+      { offset: function () {
           return -$(this.element).height() + 155;
-        },
+        }
       }
     );
   };
 
+  // Helper to activate current section in the navbar
+  var navActive = function (section) {
+    var $el = $("#navbar > ul");
+    $el.find("li").removeClass("active");
+    $el.each(function () {
+      $(this).find('a[data-nav-section="' + section + '"]').closest("li").addClass("active");
+    });
+  };
+
+  // Detect time and switch to dark mode automatically
+  var detectDayNightMode = function () {
+    const hours = new Date().getHours();
+    if (hours <= 6 || hours >= 20) {
+      document.body.classList.add("dark-mode");
+    }
+  };
+
+  // Initialize all functions when document is ready
   $(function () {
     fullHeight();
-    counterWayPoint();
     contentWayPoint();
     burgerMenu();
     clickMenu();
@@ -157,18 +123,23 @@
     mobileMenuOutsideClick();
     detectDayNightMode();
   });
+
 })();
 
+// Accordion constructor for collapsible elements
 var Accordion = function (el, multiple) {
   this.el = el || {};
   this.multiple = multiple || false;
+  
   var links = this.el.find(".link");
   links.on("click", { el: this.el, multiple: this.multiple }, this.dropdown);
 };
 
+// Accordion dropdown toggle
 Accordion.prototype.dropdown = function (e) {
   var $el = e.data.el;
-  var $this = $(this), $next = $this.next();
+  var $this = $(this),
+      $next = $this.next();
 
   $next.slideToggle();
   $this.parent().toggleClass("open");
@@ -178,15 +149,5 @@ Accordion.prototype.dropdown = function (e) {
   }
 };
 
+// Initialize Accordion on page load
 var accordion = new Accordion($("#accordion"), false);
-
-function enableDarkMode() {
-  document.body.classList.toggle("dark-mode");
-}
-
-function detectDayNightMode() {
-  const hours = new Date().getHours();
-  if (hours <= 6 || hours >= 20) {
-    enableDarkMode();
-  }
-}
