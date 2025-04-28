@@ -1,4 +1,3 @@
-
 * {
 	box-sizing: border-box;
 }
@@ -6,7 +5,7 @@
 .dark-mode {
 	background-color: black;
 	color: white;
-  }
+}
 
 /* =======================================================
 *
@@ -2197,3 +2196,33 @@ hr {
 		color: #f9bf3f;
 	}
   }
+
+#darkModeToggle {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: transparent;
+  border: 2px solid #2c98f0;
+  color: #000;
+  border-radius: 25px;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#darkModeToggle:hover {
+  background: #2c98f0;
+  color: #fff;
+}
+
+.dark-mode #darkModeToggle {
+  border-color: #f9bf3f;
+  color: #fff;
+}
+
+.dark-mode #darkModeToggle:hover {
+  background: #f9bf3f;
+  color: #000;
+}

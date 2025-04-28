@@ -113,6 +113,33 @@
     }
   };
 
+  // Toggle dark mode manually
+  var darkModeToggle = function () {
+    const button = document.getElementById("darkModeToggle");
+    const body = document.body;
+
+    // Check for saved dark mode preference
+    if (localStorage.getItem("darkMode") === "enabled") {
+      body.classList.add("dark-mode");
+      button.textContent = "Light Mode";
+    } else {
+      button.textContent = "Dark Mode";
+    }
+
+    // Toggle dark mode on button click
+    button.addEventListener("click", function () {
+      if (body.classList.contains("dark-mode")) {
+        body.classList.remove("dark-mode");
+        localStorage.setItem("darkMode", "disabled");
+        button.textContent = "Dark Mode";
+      } else {
+        body.classList.add("dark-mode");
+        localStorage.setItem("darkMode", "enabled");
+        button.textContent = "Light Mode";
+      }
+    });
+  };
+
   // Initialize all functions when document is ready
   $(function () {
     fullHeight();
@@ -122,6 +149,7 @@
     navigationSection();
     mobileMenuOutsideClick();
     detectDayNightMode();
+    darkModeToggle();
   });
 
 })();
