@@ -118,7 +118,7 @@ export const footer = [
     data: [
       {
         text: "Linkedin",
-        link: "https://www.linkedin.com/in/eitanbakirov/",
+        link: "https://www.linkedin.com/in/eitan-bakirov/",
       },
       {
         text: "Github",
