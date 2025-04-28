@@ -128,6 +128,6 @@ export const footer = [
   },
   {
     label: "copyright-text",
-    data: ["Made with &hearts; by Vinay Somawat"],
-  },
+    data: ["Made with ♥ by Eitan Bakirov"],
+  }
 ];
