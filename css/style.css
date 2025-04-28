@@ -2194,7 +2194,7 @@ hr {
 
   .dark-mode {
 	strong {
-		color: #f9bf3f;
+		color: #2c98f0;
 	}
   }
 
@@ -2219,11 +2219,11 @@ hr {
 }
 
 .dark-mode #darkModeToggle {
-  border-color: #f9bf3f;
+  border-color: #2c98f0;
   color: #fff;
 }
 
 .dark-mode #darkModeToggle:hover {
-  background: #f9bf3f;
+  background: #2c98f0;
   color: #000;
 }
