@@ -107,10 +107,8 @@
 
   // Detect time and switch to dark mode automatically
   var detectDayNightMode = function () {
-    const hours = new Date().getHours();
-    if (hours <= 6 || hours >= 20) {
-      document.body.classList.add("dark-mode");
-    }
+    // Remove or comment out this function if you don't want auto dark mode
+    // Or leave it empty if you want to keep the function call in your init
   };
 
   // Toggle dark mode manually
@@ -118,11 +116,17 @@
     const button = document.getElementById("darkModeToggle");
     const body = document.body;
 
+    // Set default to light mode if no preference is stored
+    if (!localStorage.getItem("darkMode")) {
+      localStorage.setItem("darkMode", "disabled");
+    }
+
     // Check for saved dark mode preference
     if (localStorage.getItem("darkMode") === "enabled") {
       body.classList.add("dark-mode");
       button.textContent = "Light Mode";
     } else {
+      body.classList.remove("dark-mode");
       button.textContent = "Dark Mode";
     }
 
