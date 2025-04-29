@@ -787,53 +787,95 @@ body.offcanvas .colorlib-nav-toggle {
 	margin-top: 5px;
 	border: 1px solid #e6e6e6 !important;
 }
+
+.timeline-centered {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.timeline-centered:before,
+.timeline-centered:after {
+	content: " ";
+	display: table;
+}
+
+.timeline-centered:after {
+	clear: both;
+}
+
+.timeline-centered:before,
+.timeline-centered:after {
+	content: " ";
+	display: table;
+}
+
+.timeline-centered:after {
+	clear: both;
+}
+
 .timeline-centered:before {
 	content: "";
 	position: absolute;
 	display: block;
 	width: 4px;
-	background: #e0e0e0; /* light neutral line */
+	background: #e0e0e0;
 	top: 20px;
 	bottom: 20px;
 	margin-left: 29px;
+}
+
+.timeline-centered .timeline-entry {
+	position: relative;
+	margin-top: 5px;
+	margin-left: 30px;
+	margin-bottom: 10px;
+	clear: both;
+}
+
+.timeline-centered .timeline-entry .timeline-entry-inner {
+	position: relative;
+	margin-left: -20px;
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
 	display: block;
 	width: 40px;
 	height: 40px;
-	background: #2c98f0; /* default dot color */
+	background: #2c98f0;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
 	border-radius: 50%;
 	text-align: center;
+	-moz-box-shadow: 0 0 0 5px #f2f3f7;
+	-webkit-box-shadow: 0 0 0 5px #f2f3f7;
 	box-shadow: 0 0 0 5px #f2f3f7;
 	line-height: 40px;
 	float: left;
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.color-2 {
-	background: #005f99; /* deep blue */
-	color: white;
-}
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.color-3 {
-	background: #008080; /* teal */
-}
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.color-4 {
-	background: #6a0dad; /* purple */
-}
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.color-5 {
-	background: #2fa499; /* green-teal */
+.timeline-centered
+	.timeline-entry
+	.timeline-entry-inner
+	.timeline-icon.color-none {
+	background: #fff;
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
 	position: relative;
 	background: #ffffff; /* clean white */
-	color: #212121; /* dark gray text */
+	color: #212121; /* dark gray text, softer than pure black */
 	padding: 1.5em;
 	margin-left: 60px;
 	border-radius: 10px;
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-	border: 1px solid #e0e0e0;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* subtle shadow */
+	border: 1px solid #e0e0e0; /* light gray border */
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);  /* Added subtle shadow */
 }
+
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {
 	content: "";
@@ -849,30 +891,38 @@ body.offcanvas .colorlib-nav-toggle {
 	margin-left: -9px;
 }
 
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p + p {
+	margin-top: 0px;
+}
+
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 {
 	margin-bottom: 10px;
 	font-size: 20px;
 	font-weight: 500;
 }
 
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 span {
-	opacity: 0.6; /* more visible */
-	font-size: 16px;
-}
-
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label .timeline-sublabel {
 	font-weight: 600;
-	margin: 0 0 5px;
+	margin: 0 0px 5px;
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label .timeline-text {
 	margin-bottom: 0px;
 	font-size: 13px;
-	color: #444; /* softer than pure black */
+	color: #000
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label div {
 	margin-top: 5px;
+}
+
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 span {
+    -webkit-opacity: 0.6;  /* Changed from 0.4 */
+    -moz-opacity: 0.6;    /* Changed from 0.4 */
+    opacity: 0.6;         /* Changed from 0.4 */
+    -ms-filter: alpha(opacity=60);  /* Changed from 40 */
+    filter: alpha(opacity=60);      /* Changed from 40 */
+    font-size: 16px;
 }
 
 .services {
