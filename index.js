@@ -14,24 +14,6 @@ function populateBio(items, id) {
   });
 }
 
-function populateSkills(items, id) {
-  const skillsTag = document.getElementById(id);
-  items.forEach((item) => {
-    const li = document.createElement("li");
-    li.innerHTML = item;
-
-    const divProgressWrap = document.createElement("div");
-    divProgressWrap.className = "progress-wrap";
-    divProgressWrap.append(li);
-
-    const divAnimateBox = document.createElement("div");
-    divAnimateBox.className = "col-md-12 animate-box";
-    divAnimateBox.append(divProgressWrap);
-
-    skillsTag.append(divAnimateBox);
-  });
-}
-
 function populateExpEdu(items, id) {
   const container = document.getElementById(id);
 
@@ -94,8 +76,30 @@ function populateExpEdu(items, id) {
   container.append(endArticle);
 }
 
+function populateSkills() {
+  const skillsContainer = document.getElementById('skills');
+  
+  skills.forEach(category => {
+      const skillDiv = document.createElement('div');
+      skillDiv.className = 'col-md-6 animate-box';
+      skillDiv.setAttribute('data-animate-effect', 'fadeInLeft');
+      
+      skillDiv.innerHTML = `
+          <div class="progress-wrap">
+              <h3><b>${category.category}:</b> ${category.items.join(', ')}</h3>
+          </div>
+      `;
+      
+      skillsContainer.appendChild(skillDiv);
+  });
+}
+
 // Run all population functions
 populateBio(bio, "bio");
-populateSkills(skills, "skills");
 populateExpEdu(experience, "experience");
 populateExpEdu(education, "education");
+
+// Call the function when the document is ready
+document.addEventListener('DOMContentLoaded', () => {
+  populateSkills();
+});
