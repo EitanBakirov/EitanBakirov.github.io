@@ -91,7 +91,7 @@ function populateSkills() {
         
         skillDiv.innerHTML = `
             <div class="progress-wrap">
-                <h3><b>${category.category}:</b> ${category.items.join(', ')}</h3>
+                <b>${category.category}:</b> ${category.items.join(', ')}
             </div>
         `;
         
