@@ -866,7 +866,7 @@ body.offcanvas .colorlib-nav-toggle {
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
 	position: relative;
-	background: #ffffff; /* clean white */
+	background: #c2c2c2; /* clean white */
 	color: #212121; /* dark gray text, softer than pure black */
 	padding: 1.5em;
 	margin-left: 60px;
