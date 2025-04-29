@@ -80,21 +80,20 @@ function populateSkills() {
     const skillsContainer = document.getElementById('skills');
     
     skills.forEach(category => {
-        // Create a full-width row for each category
+        // Create a row for each category
         const rowDiv = document.createElement('div');
         rowDiv.className = 'row animate-box';
         rowDiv.setAttribute('data-animate-effect', 'fadeInLeft');
         
-        // Create the skill div that takes full width
+        // Create the skill div
         const skillDiv = document.createElement('div');
         skillDiv.className = 'col-md-12';
         
-        skillDiv.innerHTML = `
-            <div class="progress-wrap">
-                <b>${category.category}:</b> ${category.items.join(', ')}
-            </div>
-        `;
+        // Create paragraph element
+        const p = document.createElement('p');
+        p.innerHTML = `<b>${category.category}:</b> ${category.items.join(', ')}`;
         
+        skillDiv.appendChild(p);
         rowDiv.appendChild(skillDiv);
         skillsContainer.appendChild(rowDiv);
     });
