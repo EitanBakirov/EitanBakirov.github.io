@@ -36,27 +36,6 @@ export const experience = [
     icon: "shield-alt",
   },
   {
-    title: "Independent Projects",
-    duration: "2023 - Present",
-    subtitle: "Data Science & Machine Learning Projects",
-    details: [
-      "Built a personalized music recommendation system using collaborative and content-based filtering.",
-      "Created a malicious file classification pipeline achieving 93% precision.",
-      "Developed a bike rental demand prediction model using XGBoost and CatBoost.",
-    ],
-    tags: [
-      "Python",
-      "Machine Learning",
-      "EDA",
-      "Scikit-learn",
-      "XGBoost",
-      "CatBoost",
-      "PyTorch",
-      "Data Visualization"
-    ],
-    icon: "laptop-code",
-  },
-  {
     title: "Israeli Defense Forces (IDF) – Shahar Unit, J6 & Cyber Defense Directorate",
     duration: "2018 - 2021",
     subtitle: "SAP System Analyst and Instructor",
