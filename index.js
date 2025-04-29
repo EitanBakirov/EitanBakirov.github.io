@@ -77,21 +77,27 @@ function populateExpEdu(items, id) {
 }
 
 function populateSkills() {
-  const skillsContainer = document.getElementById('skills');
-  
-  skills.forEach(category => {
-      const skillDiv = document.createElement('div');
-      skillDiv.className = 'col-md-6 animate-box';
-      skillDiv.setAttribute('data-animate-effect', 'fadeInLeft');
-      
-      skillDiv.innerHTML = `
-          <div class="progress-wrap">
-              <h3><b>${category.category}:</b> ${category.items.join(', ')}</h3>
-          </div>
-      `;
-      
-      skillsContainer.appendChild(skillDiv);
-  });
+    const skillsContainer = document.getElementById('skills');
+    
+    skills.forEach(category => {
+        // Create a full-width row for each category
+        const rowDiv = document.createElement('div');
+        rowDiv.className = 'row animate-box';
+        rowDiv.setAttribute('data-animate-effect', 'fadeInLeft');
+        
+        // Create the skill div that takes full width
+        const skillDiv = document.createElement('div');
+        skillDiv.className = 'col-md-12';
+        
+        skillDiv.innerHTML = `
+            <div class="progress-wrap">
+                <h3><b>${category.category}:</b> ${category.items.join(', ')}</h3>
+            </div>
+        `;
+        
+        rowDiv.appendChild(skillDiv);
+        skillsContainer.appendChild(rowDiv);
+    });
 }
 
 // Run all population functions
