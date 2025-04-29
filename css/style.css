@@ -851,6 +851,7 @@ body.offcanvas .colorlib-nav-toggle {
 	box-shadow: 0 0 0 5px #f2f3f7;
 	line-height: 40px;
 	float: left;
+	margin-left: 10px;
 }
 
 .timeline-centered
