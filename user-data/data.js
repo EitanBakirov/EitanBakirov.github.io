@@ -6,12 +6,33 @@ export const bio = [
 ];
 
 export const skills = [
-  "Python, SQL, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn",
-  "Machine Learning, Deep Learning, Data Analysis, Data Visualization",
-  "PyTorch, TensorFlow, Hugging Face",
-  "FastAPI, Streamlit, Docker, Git",
-  "Problem Solving, Research, Experimentation, Model Evaluation",
+  {
+    category: "Programming & Data Tools",
+    items: ["Python", "SQL", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+  },
+  {
+    category: "Machine Learning & AI",
+    items: [
+      "Scikit-learn",
+      "PyTorch",
+      "TensorFlow",
+      "Hugging Face Transformers",
+      "Machine Learning",
+      "Deep Learning",
+      "Model Evaluation",
+      "Experimentation",
+    ],
+  },
+  {
+    category: "Web & App Development",
+    items: ["FastAPI", "Streamlit", "Docker", "Git"],
+  },
+  {
+    category: "Data Science & Analysis",
+    items: ["Data Analysis", "Data Visualization", "Problem Solving", "Research"],
+  },
 ];
+
 
 export const experience = [
   {
