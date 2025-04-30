@@ -131,3 +131,25 @@ export const footer = [
     data: ["Made with ♥ by Eitan Bakirov"],
   }
 ];
+
+export const featuredProjects = [
+  {
+    title: "Project 1",
+    description: "Description of project 1. This can be multiple paragraphs explaining the project details, technologies used, and key features.",
+    images: ["./images/project1-1.jpg", "./images/project1-2.jpg", "./images/project1-3.jpg"],
+    thumbnail: "./images/project1-thumb.jpg",
+    tags: ["Python", "FastAPI", "Machine Learning"],
+    github: "https://github.com/EitanBakirov/project1",
+    demo: "https://demo-link.com/project1", // Optional
+  },
+  {
+    title: "Project 2",
+    description: "Description of project 2. Add more details about this specific project here.",
+    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
+    thumbnail: "./images/project2-thumb.jpg",
+    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    github: "https://github.com/EitanBakirov/project2",
+    demo: "", // No demo link for this one
+  },
+  // Add more projects as needed
+];

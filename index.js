@@ -3,6 +3,7 @@ import {
   skills,
   education,
   experience,
+  featuredProjects, // Import the featured projects
 } from "./user-data/data.js";
 
 function populateBio(items, id) {
@@ -102,80 +103,9 @@ function populateSkills() {
 async function populateRepos() {
     const reposContainer = document.getElementById('repos');
     try {
-        // GraphQL query to fetch pinned repositories
-        const query = `
-        {
-            user(login: "EitanBakirov") {
-                pinnedItems(first: 6, types: REPOSITORY) {
-                    nodes {
-                        ... on Repository {
-                            name
-                            description
-                            url
-                            primaryLanguage {
-                                name
-                            }
-                            stargazerCount
-                        }
-                    }
-                }
-            }
-        }`;
-
-        const response = await fetch('https://api.github.com/graphql', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                // Using no token - works for public data with rate limits
-            },
-            body: JSON.stringify({ query })
-        });
-
-        const data = await response.json();
-        
-        // Check if we got pinned repos
-        if (data.data && data.data.user && data.data.user.pinnedItems) {
-            const pinnedRepos = data.data.user.pinnedItems.nodes;
-            
-            if (pinnedRepos.length === 0) {
-                // Fallback to REST API if no pinned repos
-                await fetchRegularRepos();
-                return;
-            }
-            
-            pinnedRepos.forEach(repo => {
-                const li = document.createElement('li');
-                li.className = 'animate-box';
-                li.innerHTML = `
-                    <div class="repo-card">
-                        <h3 class="repo-heading">${repo.name}</h3>
-                        <p class="repo-description">${repo.description || 'No description available'}</p>
-                        <p class="repo-language">Main language: ${repo.primaryLanguage ? repo.primaryLanguage.name : 'Not specified'}</p>
-                        <p class="repo-stars">⭐ ${repo.stargazerCount} stars</p>
-                        <a href="${repo.url}" target="_blank" class="repo-link">View Repository</a>
-                    </div>
-                `;
-                reposContainer.appendChild(li);
-            });
-        } else {
-            // Fallback to REST API
-            await fetchRegularRepos();
-        }
-    } catch (error) {
-        console.error("Error fetching pinned repositories:", error);
-        // Fallback to regular repos
-        await fetchRegularRepos();
-    }
-}
-
-// Helper function for fetching regular repos as fallback
-async function fetchRegularRepos() {
-    const reposContainer = document.getElementById('repos');
-    try {
+        // Use the GitHub API directly instead of the third-party service
         const response = await fetch(`https://api.github.com/users/EitanBakirov/repos?sort=updated&direction=desc&per_page=6`);
         const repos = await response.json();
-        
-        reposContainer.innerHTML = ''; // Clear previous content
         
         repos.forEach(repo => {
             const li = document.createElement('li');
@@ -197,6 +127,119 @@ async function fetchRegularRepos() {
     }
 }
 
+// Add this function to populate featured projects
+function populateProjects() {
+  const projectsContainer = document.getElementById('projects-container');
+  
+  featuredProjects.forEach(project => {
+    // Create project card
+    const projectCard = document.createElement('div');
+    projectCard.className = 'col-md-4 animate-box';
+    projectCard.setAttribute('data-animate-effect', 'fadeInLeft');
+    
+    // Create card content
+    projectCard.innerHTML = `
+      <div class="project-card" data-project="${encodeURIComponent(JSON.stringify(project))}">
+        <div class="project-image">
+          <img src="${project.thumbnail}" alt="${project.title}">
+          <div class="project-overlay">
+            <h3>${project.title}</h3>
+            <div class="project-tags">
+              ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+            </div>
+            <div class="project-view">View Details</div>
+          </div>
+        </div>
+      </div>
+    `;
+    
+    projectsContainer.appendChild(projectCard);
+  });
+  
+  // Add event listeners to cards
+  const cards = document.querySelectorAll('.project-card');
+  cards.forEach(card => {
+    card.addEventListener('click', function() {
+      const projectData = JSON.parse(decodeURIComponent(this.getAttribute('data-project')));
+      openProjectModal(projectData);
+    });
+  });
+}
+
+// Function to open the project modal
+function openProjectModal(project) {
+  // Set modal content
+  document.getElementById('modal-title').textContent = project.title;
+  document.getElementById('modal-description').textContent = project.description;
+  
+  // Set tags
+  const tagsContainer = document.getElementById('modal-tags');
+  tagsContainer.innerHTML = '';
+  project.tags.forEach(tag => {
+    const tagSpan = document.createElement('span');
+    tagSpan.className = 'modal-tag';
+    tagSpan.textContent = tag;
+    tagsContainer.appendChild(tagSpan);
+  });
+  
+  // Set buttons
+  const githubLink = document.getElementById('modal-github');
+  githubLink.href = project.github;
+  
+  const demoLink = document.getElementById('modal-demo');
+  if (project.demo) {
+    demoLink.href = project.demo;
+    demoLink.style.display = 'inline-block';
+  } else {
+    demoLink.style.display = 'none';
+  }
+  
+  // Create carousel
+  const carousel = document.getElementById('modal-carousel');
+  carousel.innerHTML = '';
+  project.images.forEach((img, index) => {
+    const imgElement = document.createElement('img');
+    imgElement.src = img;
+    imgElement.alt = `${project.title} screenshot ${index + 1}`;
+    imgElement.className = index === 0 ? 'active' : '';
+    carousel.appendChild(imgElement);
+  });
+  
+  // Create carousel navigation dots if multiple images
+  if (project.images.length > 1) {
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'carousel-dots';
+    for (let i = 0; i < project.images.length; i++) {
+      const dot = document.createElement('span');
+      dot.className = i === 0 ? 'dot active' : 'dot';
+      dot.setAttribute('data-index', i);
+      dot.addEventListener('click', function() {
+        const index = parseInt(this.getAttribute('data-index'));
+        showSlide(index);
+      });
+      dotsContainer.appendChild(dot);
+    }
+    carousel.appendChild(dotsContainer);
+  }
+  
+  // Show modal
+  document.getElementById('projectModal').style.display = 'block';
+}
+
+// Function to handle modal carousel slides
+function showSlide(index) {
+  const slides = document.querySelectorAll('#modal-carousel img');
+  const dots = document.querySelectorAll('#modal-carousel .dot');
+  
+  slides.forEach((slide, i) => {
+    slide.className = i === index ? 'active' : '';
+  });
+  
+  dots.forEach((dot, i) => {
+    dot.className = i === index ? 'dot active' : 'dot';
+  });
+}
+
 // Run all population functions
 populateBio(bio, "bio");
 populateExpEdu(experience, "experience");
@@ -206,4 +249,17 @@ populateExpEdu(education, "education");
 document.addEventListener('DOMContentLoaded', () => {
   populateSkills();
   populateRepos();
+  populateProjects(); // Add this line
+  
+  // Close modal when clicking the X
+  document.querySelector('.close-modal').addEventListener('click', function() {
+    document.getElementById('projectModal').style.display = 'none';
+  });
+  
+  // Close modal when clicking outside of it
+  window.addEventListener('click', function(event) {
+    if (event.target === document.getElementById('projectModal')) {
+      document.getElementById('projectModal').style.display = 'none';
+    }
+  });
 });
