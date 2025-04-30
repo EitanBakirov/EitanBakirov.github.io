@@ -99,6 +99,33 @@ function populateSkills() {
     });
 }
 
+async function populateRepos() {
+    const reposContainer = document.getElementById('repos');
+    try {
+        // Use the GitHub API directly instead of the third-party service
+        const response = await fetch(`https://api.github.com/users/EitanBakirov/repos?sort=updated&direction=desc&per_page=6`);
+        const repos = await response.json();
+        
+        repos.forEach(repo => {
+            const li = document.createElement('li');
+            li.className = 'animate-box';
+            li.innerHTML = `
+                <div class="repo-card">
+                    <h3 class="repo-heading">${repo.name}</h3>
+                    <p class="repo-description">${repo.description || 'No description available'}</p>
+                    <p class="repo-language">Main language: ${repo.language || 'Not specified'}</p>
+                    <p class="repo-stars">⭐ ${repo.stargazers_count} stars</p>
+                    <a href="${repo.html_url}" target="_blank" class="repo-link">View Repository</a>
+                </div>
+            `;
+            reposContainer.appendChild(li);
+        });
+    } catch (error) {
+        console.error("Error fetching repositories:", error);
+        reposContainer.innerHTML = `<p>Failed to load repositories. Please check my <a href="https://github.com/EitanBakirov" target="_blank">GitHub profile</a> directly.</p>`;
+    }
+}
+
 // Run all population functions
 populateBio(bio, "bio");
 populateExpEdu(experience, "experience");
@@ -107,4 +134,5 @@ populateExpEdu(education, "education");
 // Call the function when the document is ready
 document.addEventListener('DOMContentLoaded', () => {
   populateSkills();
+  populateRepos();
 });
