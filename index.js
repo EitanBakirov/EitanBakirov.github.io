@@ -102,9 +102,80 @@ function populateSkills() {
 async function populateRepos() {
     const reposContainer = document.getElementById('repos');
     try {
-        // Use the GitHub API directly instead of the third-party service
+        // GraphQL query to fetch pinned repositories
+        const query = `
+        {
+            user(login: "EitanBakirov") {
+                pinnedItems(first: 6, types: REPOSITORY) {
+                    nodes {
+                        ... on Repository {
+                            name
+                            description
+                            url
+                            primaryLanguage {
+                                name
+                            }
+                            stargazerCount
+                        }
+                    }
+                }
+            }
+        }`;
+
+        const response = await fetch('https://api.github.com/graphql', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                // Using no token - works for public data with rate limits
+            },
+            body: JSON.stringify({ query })
+        });
+
+        const data = await response.json();
+        
+        // Check if we got pinned repos
+        if (data.data && data.data.user && data.data.user.pinnedItems) {
+            const pinnedRepos = data.data.user.pinnedItems.nodes;
+            
+            if (pinnedRepos.length === 0) {
+                // Fallback to REST API if no pinned repos
+                await fetchRegularRepos();
+                return;
+            }
+            
+            pinnedRepos.forEach(repo => {
+                const li = document.createElement('li');
+                li.className = 'animate-box';
+                li.innerHTML = `
+                    <div class="repo-card">
+                        <h3 class="repo-heading">${repo.name}</h3>
+                        <p class="repo-description">${repo.description || 'No description available'}</p>
+                        <p class="repo-language">Main language: ${repo.primaryLanguage ? repo.primaryLanguage.name : 'Not specified'}</p>
+                        <p class="repo-stars">⭐ ${repo.stargazerCount} stars</p>
+                        <a href="${repo.url}" target="_blank" class="repo-link">View Repository</a>
+                    </div>
+                `;
+                reposContainer.appendChild(li);
+            });
+        } else {
+            // Fallback to REST API
+            await fetchRegularRepos();
+        }
+    } catch (error) {
+        console.error("Error fetching pinned repositories:", error);
+        // Fallback to regular repos
+        await fetchRegularRepos();
+    }
+}
+
+// Helper function for fetching regular repos as fallback
+async function fetchRegularRepos() {
+    const reposContainer = document.getElementById('repos');
+    try {
         const response = await fetch(`https://api.github.com/users/EitanBakirov/repos?sort=updated&direction=desc&per_page=6`);
         const repos = await response.json();
+        
+        reposContainer.innerHTML = ''; // Clear previous content
         
         repos.forEach(repo => {
             const li = document.createElement('li');
