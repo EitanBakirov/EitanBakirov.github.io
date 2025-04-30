@@ -134,48 +134,84 @@ export const footer = [
 
 export const featuredProjects = [
   {
-    title: "Project 1",
+    title: "National Insurance Form Parser",
     description: "Description of project 1. This can be multiple paragraphs explaining the project details, technologies used, and key features.",
     images: ["./images/project1-1.jpg", "./images/project1-2.jpg", "./images/project1-3.jpg"],
     thumbnail: "./images/project1-thumb.jpg",
     tags: ["Python", "FastAPI", "Machine Learning"],
-    github: "https://github.com/EitanBakirov/project1",
+    github: "https://github.com/EitanBakirov/insurance-form-parser",
     demo: "https://demo-link.com/project1", // Optional
   },
   {
-    title: "Project 2",
+    title: "Health Maintenance Organization Chatbot System",
     description: "Description of project 2. Add more details about this specific project here.",
     images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
     thumbnail: "./images/project2-thumb.jpg",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
-    github: "https://github.com/EitanBakirov/project2",
+    github: "https://github.com/EitanBakirov/hmo-chatbot",
     demo: "", // No demo link for this one
   },
   {
-    title: "Project 3",
+    title: "Malicious File Classification",
     description: "Description of project 3. Add more details about this specific project here.",
     images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
     thumbnail: "./images/project2-thumb.jpg",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
-    github: "https://github.com/EitanBakirov/project2",
+    github: "https://github.com/EitanBakirov/malicious-file-classification",
     demo: "", // No demo link for this one
   },
   {
-    title: "Project 4",
+    title: "Boston Airbnb Analysis",
     description: "Description of project 4. Add more details about this specific project here.",
     images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
     thumbnail: "./images/project2-thumb.jpg",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
-    github: "https://github.com/EitanBakirov/project2",
+    github: "https://github.com/EitanBakirov/boston-airbnb-analysis",
     demo: "", // No demo link for this one
   },
   {
-    title: "Project 5",
+    title: "Music Recommendation System",
     description: "Description of project 5. Add more details about this specific project here.",
     images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
     thumbnail: "./images/project2-thumb.jpg",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
-    github: "https://github.com/EitanBakirov/project2",
+    github: "https://github.com/EitanBakirov/music-recommendation-system",
+    demo: "", // No demo link for this one
+  },
+  {
+    title: "Bike Rental Demand Prediction",
+    description: "Description of project 5. Add more details about this specific project here.",
+    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
+    thumbnail: "./images/project2-thumb.jpg",
+    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    github: "https://github.com/EitanBakirov/bicycle-rental-demand-prediction",
+    demo: "", // No demo link for this one
+  },
+  {
+    title: "TV Show Dialog Classification",
+    description: "Description of project 5. Add more details about this specific project here.",
+    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
+    thumbnail: "./images/project2-thumb.jpg",
+    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    github: "https://github.com/EitanBakirov/tv-show-dialogue-classification",
+    demo: "", // No demo link for this one
+  },
+  {
+    title: "World Happiness Report Analysis",
+    description: "Description of project 5. Add more details about this specific project here.",
+    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
+    thumbnail: "./images/project2-thumb.jpg",
+    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    github: "https://github.com/EitanBakirov/world-happiness-analysis",
+    demo: "", // No demo link for this one
+  },
+  {
+    title: "Slug Wars",
+    description: "Description of project 5. Add more details about this specific project here.",
+    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
+    thumbnail: "./images/project2-thumb.jpg",
+    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    github: "https://github.com/EitanBakirov/slug-wars",
     demo: "", // No demo link for this one
   },
   // Add more projects as needed
