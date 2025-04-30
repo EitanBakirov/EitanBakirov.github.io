@@ -151,5 +151,32 @@ export const featuredProjects = [
     github: "https://github.com/EitanBakirov/project2",
     demo: "", // No demo link for this one
   },
+  {
+    title: "Project 3",
+    description: "Description of project 3. Add more details about this specific project here.",
+    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
+    thumbnail: "./images/project2-thumb.jpg",
+    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    github: "https://github.com/EitanBakirov/project2",
+    demo: "", // No demo link for this one
+  },
+  {
+    title: "Project 4",
+    description: "Description of project 4. Add more details about this specific project here.",
+    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
+    thumbnail: "./images/project2-thumb.jpg",
+    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    github: "https://github.com/EitanBakirov/project2",
+    demo: "", // No demo link for this one
+  },
+  {
+    title: "Project 5",
+    description: "Description of project 5. Add more details about this specific project here.",
+    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
+    thumbnail: "./images/project2-thumb.jpg",
+    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    github: "https://github.com/EitanBakirov/project2",
+    demo: "", // No demo link for this one
+  },
   // Add more projects as needed
 ];
