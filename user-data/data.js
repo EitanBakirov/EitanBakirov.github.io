@@ -136,6 +136,7 @@ export const featuredProjects = [
   {
     title: "National Insurance Form Parser",
     description: "Description of project 1. This can be multiple paragraphs explaining the project details, technologies used, and key features.",
+    repoName: "insurance-form-parser",
     tags: ["Python", "FastAPI", "Machine Learning"],
     github: "https://github.com/EitanBakirov/insurance-form-parser",
     demo: "https://demo-link.com/project1", // Optional
@@ -150,6 +151,7 @@ export const featuredProjects = [
   {
     title: "Malicious File Classification",
     description: "A machine learning application designed to analyze and classify files as malicious or benign using static analysis features. This project combines robust data science techniques with a user-friendly web interface built using Streamlit.",
+    repoName: "malicious-file-classification-app",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
     github: "https://github.com/EitanBakirov/malicious-file-classification-app",
     demo: "", // No demo link for this one
