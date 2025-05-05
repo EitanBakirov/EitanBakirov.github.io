@@ -2182,7 +2182,7 @@ hr {
     max-height: 50vh;
     overflow: hidden;
     border-radius: 8px;
-    padding-bottom: 40px; /* Add space for dots */
+    padding-bottom: 20px; /* Add space for dots */
 }
   
   .carousel img {
