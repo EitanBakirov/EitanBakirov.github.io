@@ -219,29 +219,38 @@ function openProjectModal(project) {
   // Create carousel
   const carousel = document.getElementById('modal-carousel');
   carousel.innerHTML = '';
-  project.images.forEach((img, index) => {
-    const imgElement = document.createElement('img');
-    imgElement.src = img;
-    imgElement.alt = `${project.title} screenshot ${index + 1}`;
-    imgElement.className = index === 0 ? 'active' : '';
-    carousel.appendChild(imgElement);
-  });
-  
-  // Create carousel navigation dots if multiple images
-  if (project.images.length > 1) {
-    const dotsContainer = document.createElement('div');
-    dotsContainer.className = 'carousel-dots';
-    for (let i = 0; i < project.images.length; i++) {
-      const dot = document.createElement('span');
-      dot.className = i === 0 ? 'dot active' : 'dot';
-      dot.setAttribute('data-index', i);
-      dot.addEventListener('click', function() {
-        const index = parseInt(this.getAttribute('data-index'));
-        showSlide(index);
-      });
-      dotsContainer.appendChild(dot);
+
+  // Filter out the thumbnail/first image from carousel images
+  const carouselImages = project.images.slice(1); // Skip the first image
+
+  if (carouselImages.length > 0) {
+    carouselImages.forEach((img, index) => {
+      const imgElement = document.createElement('img');
+      imgElement.src = img;
+      imgElement.alt = `${project.title} screenshot ${index + 1}`;
+      imgElement.className = index === 0 ? 'active' : '';
+      carousel.appendChild(imgElement);
+    });
+    
+    // Create carousel navigation dots if multiple images
+    if (carouselImages.length > 1) {
+      const dotsContainer = document.createElement('div');
+      dotsContainer.className = 'carousel-dots';
+      for (let i = 0; i < carouselImages.length; i++) {
+        const dot = document.createElement('span');
+        dot.className = i === 0 ? 'dot active' : 'dot';
+        dot.setAttribute('data-index', i);
+        dot.addEventListener('click', function() {
+          const index = parseInt(this.getAttribute('data-index'));
+          showSlide(index);
+        });
+        dotsContainer.appendChild(dot);
+      }
+      carousel.appendChild(dotsContainer);
     }
-    carousel.appendChild(dotsContainer);
+  } else {
+    // If no additional images, hide carousel
+    carousel.style.display = 'none';
   }
   
   // Show modal

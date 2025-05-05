@@ -2188,7 +2188,7 @@ hr {
   
   .carousel img {
     width: 100%;
-    height: calc(50vh - 40px); /* Subtract padding for dots */
+    height: calc(60vh - 20px); /* Subtract padding for dots */
     object-fit: contain;
     display: none;
     border-radius: 8px;
