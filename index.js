@@ -5,6 +5,7 @@ import {
   experience,
   featuredProjects, // Import the featured projects
 } from "./user-data/data.js";
+import { fetchRepoScreenshots } from './js/github-api.js';
 
 function populateBio(items, id) {
   const bioTag = document.getElementById(id);
@@ -127,43 +128,54 @@ async function populateRepos() {
     }
 }
 
-// Add this function to populate featured projects
-function populateProjects() {
-  const projectsContainer = document.getElementById('projects-container');
-  
-  featuredProjects.forEach(project => {
-    // Create project card
-    const projectCard = document.createElement('div');
-    projectCard.className = 'col-md-4 animate-box';
-    projectCard.setAttribute('data-animate-effect', 'fadeInLeft');
+async function populateProjects() {
+    const projectsContainer = document.getElementById('projects-container');
     
-    // Create card content
-    projectCard.innerHTML = `
-      <div class="project-card" data-project="${encodeURIComponent(JSON.stringify(project))}">
-        <div class="project-image">
-          <img src="${project.thumbnail}" alt="${project.title}">
-          <div class="project-overlay">
-            <h3>${project.title}</h3>
-            <div class="project-tags">
-              ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
-            </div>
-            <div class="project-view">View Details</div>
-          </div>
-        </div>
-      </div>
-    `;
+    for (const project of featuredProjects) {
+        try {
+            // Fetch screenshots from GitHub
+            const screenshots = await fetchRepoScreenshots(project.repoName);
+            
+            // Set thumbnail as first screenshot or use default
+            const thumbnail = screenshots.length > 0 ? 
+                screenshots[0].url : 
+                './images/default-project-thumb.png';
+            
+            // Create project card
+            const projectCard = document.createElement('div');
+            projectCard.className = 'col-md-4 animate-box';
+            projectCard.setAttribute('data-animate-effect', 'fadeInLeft');
+            
+            // Store screenshots with project data for modal
+            const projectData = {
+                ...project,
+                images: screenshots.map(s => s.url),
+                thumbnail: thumbnail
+            };
+            
+            projectCard.innerHTML = `
+                <div class="project-card" data-project='${JSON.stringify(projectData)}'>
+                    <div class="project-image">
+                        <img src="${thumbnail}" alt="${project.title}">
+                        <div class="project-overlay">
+                            <h3>${project.title}</h3>
+                            <div class="project-tags">
+                                ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                            </div>
+                            <div class="project-view">View Details</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            projectsContainer.appendChild(projectCard);
+        } catch (error) {
+            console.error(`Error creating project card for ${project.title}:`, error);
+        }
+    }
     
-    projectsContainer.appendChild(projectCard);
-  });
-  
-  // Add event listeners to cards
-  const cards = document.querySelectorAll('.project-card');
-  cards.forEach(card => {
-    card.addEventListener('click', function() {
-      const projectData = JSON.parse(decodeURIComponent(this.getAttribute('data-project')));
-      openProjectModal(projectData);
-    });
-  });
+    // Add event listeners to cards
+    addProjectCardListeners();
 }
 
 // Function to open the project modal

@@ -136,8 +136,6 @@ export const featuredProjects = [
   {
     title: "National Insurance Form Parser",
     description: "Description of project 1. This can be multiple paragraphs explaining the project details, technologies used, and key features.",
-    images: ["./images/project1-1.jpg", "./images/project1-2.jpg", "./images/project1-3.jpg"],
-    thumbnail: "./images/project1-thumb.jpg",
     tags: ["Python", "FastAPI", "Machine Learning"],
     github: "https://github.com/EitanBakirov/insurance-form-parser",
     demo: "https://demo-link.com/project1", // Optional
@@ -145,8 +143,6 @@ export const featuredProjects = [
   {
     title: "Health Maintenance Organization Chatbot System",
     description: "Description of project 2. Add more details about this specific project here.",
-    images: ["./images/image1.jpg", "./images/project2-2.jpg"],
-    thumbnail: "./images/project2-thumb.jpg",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
     github: "https://github.com/EitanBakirov/hmo-chatbot",
     demo: "", // No demo link for this one
@@ -154,8 +150,6 @@ export const featuredProjects = [
   {
     title: "Malicious File Classification",
     description: "A machine learning application designed to analyze and classify files as malicious or benign using static analysis features. This project combines robust data science techniques with a user-friendly web interface built using Streamlit.",
-    images: ["./images/malicious-file-classification/image.png", "./images/malicious-file-classification/image-1.png", "./images/malicious-file-classification/image-2.png", "./images/malicious-file-classification/image-4.png"],
-    thumbnail: "./images/malicious-file-classification/files-classification.png",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
     github: "https://github.com/EitanBakirov/malicious-file-classification-app",
     demo: "", // No demo link for this one
@@ -163,8 +157,6 @@ export const featuredProjects = [
   {
     title: "Boston Airbnb Analysis",
     description: "Description of project 4. Add more details about this specific project here.",
-    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
-    thumbnail: "./images/project2-thumb.jpg",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
     github: "https://github.com/EitanBakirov/boston-airbnb-analysis",
     demo: "", // No demo link for this one
@@ -172,8 +164,6 @@ export const featuredProjects = [
   {
     title: "Music Recommendation System",
     description: "Description of project 5. Add more details about this specific project here.",
-    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
-    thumbnail: "./images/project2-thumb.jpg",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
     github: "https://github.com/EitanBakirov/music-recommendation-system",
     demo: "", // No demo link for this one
@@ -181,8 +171,6 @@ export const featuredProjects = [
   {
     title: "Bike Rental Demand Prediction",
     description: "Description of project 5. Add more details about this specific project here.",
-    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
-    thumbnail: "./images/project2-thumb.jpg",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
     github: "https://github.com/EitanBakirov/bicycle-rental-demand-prediction",
     demo: "", // No demo link for this one
@@ -190,8 +178,6 @@ export const featuredProjects = [
   {
     title: "TV Show Dialog Classification",
     description: "Description of project 5. Add more details about this specific project here.",
-    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
-    thumbnail: "./images/project2-thumb.jpg",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
     github: "https://github.com/EitanBakirov/tv-show-dialogue-classification",
     demo: "", // No demo link for this one
@@ -199,8 +185,6 @@ export const featuredProjects = [
   {
     title: "World Happiness Report Analysis",
     description: "Description of project 5. Add more details about this specific project here.",
-    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
-    thumbnail: "./images/project2-thumb.jpg",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
     github: "https://github.com/EitanBakirov/world-happiness-analysis",
     demo: "", // No demo link for this one
@@ -208,8 +192,6 @@ export const featuredProjects = [
   {
     title: "Slug Wars",
     description: "Description of project 5. Add more details about this specific project here.",
-    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
-    thumbnail: "./images/project2-thumb.jpg",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
     github: "https://github.com/EitanBakirov/slug-wars",
     demo: "", // No demo link for this one
