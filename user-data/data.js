@@ -145,7 +145,7 @@ export const featuredProjects = [
   {
     title: "Health Maintenance Organization Chatbot System",
     description: "Description of project 2. Add more details about this specific project here.",
-    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
+    images: ["./images/image1.jpg", "./images/project2-2.jpg"],
     thumbnail: "./images/project2-thumb.jpg",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
     github: "https://github.com/EitanBakirov/hmo-chatbot",
@@ -153,11 +153,11 @@ export const featuredProjects = [
   },
   {
     title: "Malicious File Classification",
-    description: "Description of project 3. Add more details about this specific project here.",
-    images: ["./images/project2-1.jpg", "./images/project2-2.jpg"],
-    thumbnail: "./images/project2-thumb.jpg",
+    description: "A machine learning application designed to analyze and classify files as malicious or benign using static analysis features. This project combines robust data science techniques with a user-friendly web interface built using Streamlit.",
+    images: ["./images/malicious-file-classification/image.png", "./images/malicious-file-classification/image1.png", "./images/malicious-file-classification/image2.png", "./images/malicious-file-classification/image4.png"],
+    thumbnail: "./images/malicious-file-classification/files-classification.png",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
-    github: "https://github.com/EitanBakirov/malicious-file-classification",
+    github: "https://github.com/EitanBakirov/malicious-file-classification-app",
     demo: "", // No demo link for this one
   },
   {
