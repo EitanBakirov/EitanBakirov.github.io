@@ -178,6 +178,16 @@ async function populateProjects() {
     addProjectCardListeners();
 }
 
+function addProjectCardListeners() {
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+        card.addEventListener('click', function() {
+            const projectData = JSON.parse(this.getAttribute('data-project'));
+            openProjectModal(projectData);
+        });
+    });
+}
+
 // Function to open the project modal
 function openProjectModal(project) {
   // Set modal content
