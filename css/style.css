@@ -2179,7 +2179,7 @@ hr {
 /* Modal Carousel Styling */
 .carousel {
     position: relative;
-    margin: 30px 0;
+    margin: 10px 0;
     max-height: 50vh;
     overflow: hidden;
     border-radius: 8px;
