@@ -154,7 +154,7 @@ export const featuredProjects = [
   {
     title: "Malicious File Classification",
     description: "A machine learning application designed to analyze and classify files as malicious or benign using static analysis features. This project combines robust data science techniques with a user-friendly web interface built using Streamlit.",
-    images: ["./images/malicious-file-classification/image.png", "./images/malicious-file-classification/image1.png", "./images/malicious-file-classification/image2.png", "./images/malicious-file-classification/image4.png"],
+    images: ["./images/malicious-file-classification/image.png", "./images/malicious-file-classification/image-1.png", "./images/malicious-file-classification/image-2.png", "./images/malicious-file-classification/image-4.png"],
     thumbnail: "./images/malicious-file-classification/files-classification.png",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
     github: "https://github.com/EitanBakirov/malicious-file-classification-app",

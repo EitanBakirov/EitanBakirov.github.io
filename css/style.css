@@ -2281,3 +2281,13 @@ hr {
 	  padding: 20px;
 	}
   }
+
+  /* Project Card Image Styling */
+.project-image {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Fixed height for consistency */
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+}
