@@ -166,45 +166,51 @@ export const featuredProjects = [
   },
   {
     title: "Boston Airbnb Analysis",
-    description: "Description of project 4. Add more details about this specific project here.",
-    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    description: "A comprehensive analysis of Boston's Airbnb market using data science techniques. This project includes price prediction modeling, neighborhood analysis, and seasonal trends investigation using Python's data science stack. Interactive visualizations help stakeholders understand pricing dynamics and market patterns.",
+    repoName: "boston-airbnb-analysis",
+    tags: ["Python", "Pandas", "Scikit-learn", "Data Visualization", "Statistical Analysis"],
     github: "https://github.com/EitanBakirov/boston-airbnb-analysis",
-    demo: "", // No demo link for this one
+    demo: ""
   },
   {
     title: "Music Recommendation System",
-    description: "Description of project 5. Add more details about this specific project here.",
-    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    description: "A personalized music recommendation engine that uses collaborative filtering and content-based approaches. The system analyzes user listening histories, song features, and musical patterns to suggest relevant tracks. Built with Python and integrated with the Spotify API for real-world music data.",
+    repoName: "music-recommendation-system",
+    tags: ["Python", "Collaborative Filtering", "Machine Learning", "Spotify API", "Feature Engineering"],
     github: "https://github.com/EitanBakirov/music-recommendation-system",
-    demo: "", // No demo link for this one
+    demo: ""
   },
   {
     title: "Bike Rental Demand Prediction",
-    description: "Description of project 5. Add more details about this specific project here.",
-    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    description: "A machine learning solution for predicting bicycle rental demand based on weather conditions, time of day, and seasonal factors. This project implements various regression models and time series analysis techniques to help bike-sharing services optimize their fleet management.",
+    repoName: "bicycle-rental-demand-prediction",
+    tags: ["Python", "Time Series Analysis", "Regression", "Feature Engineering", "Data Visualization"],
     github: "https://github.com/EitanBakirov/bicycle-rental-demand-prediction",
-    demo: "", // No demo link for this one
+    demo: ""
   },
   {
     title: "TV Show Dialog Classification",
-    description: "Description of project 5. Add more details about this specific project here.",
-    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    description: "An NLP project that analyzes and classifies TV show dialogues using deep learning techniques. The system identifies speaker emotions, conversation topics, and character relationships. Features include sentiment analysis and topic modeling across different TV show genres.",
+    repoName: "tv-show-dialogue-classification",
+    tags: ["NLP", "Deep Learning", "BERT", "Sentiment Analysis", "Text Classification"],
     github: "https://github.com/EitanBakirov/tv-show-dialogue-classification",
-    demo: "", // No demo link for this one
+    demo: ""
   },
   {
     title: "World Happiness Report Analysis",
-    description: "Description of project 5. Add more details about this specific project here.",
-    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    description: "A data-driven exploration of global happiness metrics using the World Happiness Report dataset. This analysis investigates factors contributing to national happiness scores, including economic indicators, social support, and healthcare quality. Interactive visualizations highlight global patterns and trends.",
+    repoName: "world-happiness-analysis",
+    tags: ["Python", "Data Analysis", "Statistical Modeling", "Geospatial Visualization", "Dashboard Development"],
     github: "https://github.com/EitanBakirov/world-happiness-analysis",
-    demo: "", // No demo link for this one
+    demo: ""
   },
   {
     title: "Slug Wars",
-    description: "Description of project 5. Add more details about this specific project here.",
-    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    description: "An interactive game developed using Python and Pygame that demonstrates object-oriented programming principles. Features include dynamic enemy AI, power-up systems, and score tracking. The project showcases game development concepts while maintaining clean code architecture.",
+    repoName: "slug-wars",
+    tags: ["Python", "Pygame", "OOP", "Game Development", "Software Design"],
     github: "https://github.com/EitanBakirov/slug-wars",
-    demo: "", // No demo link for this one
+    demo: ""
   },
   // Add more projects as needed
 ];
