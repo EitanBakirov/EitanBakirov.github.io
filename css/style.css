@@ -2209,7 +2209,14 @@ hr {
     background: transparent; /* Remove background */
     padding: 10px 0;
     margin-top: 10px; /* Add top margin to separate from image */
-	margin-bottom: 10px;
+	margin-bottom: 20px;
+	clear: both; /* Ensure dots are above the description */
+}
+
+/* Modal Description and Content */
+.modal-content p {
+    margin-top: 20px; /* Add space above description */
+    clear: both; /* Ensure description starts below dots */
 }
   
   .dot {
