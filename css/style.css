@@ -2209,6 +2209,7 @@ hr {
     background: transparent; /* Remove background */
     padding: 10px 0;
     margin-top: 10px; /* Add top margin to separate from image */
+	margin-bottom: 10px;
 }
   
   .dot {
