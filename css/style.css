@@ -2212,12 +2212,6 @@ hr {
 	margin-bottom: 20px;
 	clear: both; /* Ensure dots are above the description */
 }
-
-/* Modal Description and Content */
-.modal-content p {
-    margin-top: 20px; /* Add space above description */
-    clear: both; /* Ensure description starts below dots */
-}
   
   .dot {
 	display: inline-block;
