@@ -2,22 +2,34 @@ export async function fetchRepoScreenshots(repoName) {
     if (!repoName) {
         return [{
             url: './images/projects/default-thumb.png',
-            name: 'default-thumb'
+            name: 'default-thumb',
+            isThumb: true
         }];
     }
 
     try {
-        // Instead of fetching from GitHub, use local images
         const imageUrls = [];
         
-        // Try to load local images (you'll need to add these manually)
+        // First check for thumbnail/cover image
+        const thumbnailPaths = [
+            `./images/projects/${repoName}/thumbnail.png`,
+            `./images/projects/${repoName}/cover.png`
+        ];
+
+        // Add thumbnail if it exists
+        imageUrls.push({
+            url: thumbnailPaths[0], // Use first thumbnail path
+            name: 'thumbnail',
+            isThumb: true
+        });
+        
+        // Then add other screenshots
         for (let i = 1; i <= 5; i++) {
             const imagePath = `./images/projects/${repoName}/screenshot${i}.png`;
-            
-            // Add image if it exists
             imageUrls.push({
                 url: imagePath,
-                name: `screenshot${i}`
+                name: `screenshot${i}`,
+                isThumb: false
             });
         }
 
@@ -25,7 +37,8 @@ export async function fetchRepoScreenshots(repoName) {
         if (imageUrls.length === 0) {
             return [{
                 url: './images/projects/default-thumb.png',
-                name: 'default-thumb'
+                name: 'default-thumb',
+                isThumb: true
             }];
         }
 
@@ -34,7 +47,8 @@ export async function fetchRepoScreenshots(repoName) {
         console.error(`Error loading screenshots for ${repoName}:`, error);
         return [{
             url: './images/projects/default-thumb.png',
-            name: 'default-thumb'
+            name: 'default-thumb',
+            isThumb: true
         }];
     }
 }
