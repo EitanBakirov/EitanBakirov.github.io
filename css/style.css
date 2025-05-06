@@ -2207,8 +2207,7 @@ hr {
     right: auto;
     text-align: center;
     background: transparent; /* Remove background */
-    padding: 10px 0;
-    margin-top: 10px; /* Add top margin to separate from image */
+    margin-top: 5px; /* Add top margin to separate from image */
 	margin-bottom: 20px;
 	clear: both
 }
