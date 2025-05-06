@@ -1,25 +1,40 @@
 export async function fetchRepoScreenshots(repoName) {
+    if (!repoName) {
+        return [{
+            url: './images/projects/default-thumb.png',
+            name: 'default-thumb'
+        }];
+    }
+
     try {
-        // Get repository contents, specifically the Screenshots folder
-        const response = await fetch(`https://api.github.com/repos/EitanBakirov/${repoName}/contents/Screenshots`);
-        if (!response.ok) {
-            throw new Error('Screenshots folder not found');
+        // Instead of fetching from GitHub, use local images
+        const imageUrls = [];
+        
+        // Try to load local images (you'll need to add these manually)
+        for (let i = 1; i <= 5; i++) {
+            const imagePath = `./images/projects/${repoName}/screenshot${i}.png`;
+            
+            // Add image if it exists
+            imageUrls.push({
+                url: imagePath,
+                name: `screenshot${i}`
+            });
         }
-        
-        const contents = await response.json();
-        
-        // Filter for image files
-        const imageFiles = contents.filter(file => 
-            file.name.match(/\.(jpg|jpeg|png|gif)$/i)
-        );
-        
-        // Get the raw URLs of the images
-        return imageFiles.map(file => ({
-            url: file.download_url,
-            name: file.name
-        }));
+
+        // If no images found, return default
+        if (imageUrls.length === 0) {
+            return [{
+                url: './images/projects/default-thumb.png',
+                name: 'default-thumb'
+            }];
+        }
+
+        return imageUrls;
     } catch (error) {
-        console.error(`Error fetching screenshots for ${repoName}:`, error);
-        return [];
+        console.error(`Error loading screenshots for ${repoName}:`, error);
+        return [{
+            url: './images/projects/default-thumb.png',
+            name: 'default-thumb'
+        }];
     }
 }
