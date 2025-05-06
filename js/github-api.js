@@ -18,19 +18,37 @@ export async function fetchRepoScreenshots(repoName) {
 
         // Add thumbnail if it exists
         imageUrls.push({
-            url: thumbnailPaths[0], // Use first thumbnail path
+            url: thumbnailPaths[0],
             name: 'thumbnail',
             isThumb: true
         });
         
         // Then add other screenshots
-        for (let i = 1; i <= 5; i++) {
-            const imagePath = `./images/projects/${repoName}/screenshot${i}.png`;
-            imageUrls.push({
-                url: imagePath,
-                name: `screenshot${i}`,
-                isThumb: false
-            });
+        let screenshotIndex = 1;
+        let screenshotExists = true;
+
+        while (screenshotExists) {
+            const imagePath = `./images/projects/${repoName}/screenshot${screenshotIndex}.png`;
+            
+            // Try to load the image to check if it exists
+            try {
+                const response = await fetch(imagePath, { method: 'HEAD' });
+                if (!response.ok) {
+                    screenshotExists = false;
+                    break;
+                }
+                
+                imageUrls.push({
+                    url: imagePath,
+                    name: `screenshot${screenshotIndex}`,
+                    isThumb: false
+                });
+                
+                screenshotIndex++;
+            } catch {
+                screenshotExists = false;
+                break;
+            }
         }
 
         // If no images found, return default
