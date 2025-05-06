@@ -2179,7 +2179,7 @@ hr {
 /* Modal Carousel Styling */
 .carousel {
     position: relative;
-    margin: 20px 0 10px 0;
+    margin: 20px 0 40px 0;
     max-height: 50vh;
     overflow: visible;
     border-radius: 8px;
@@ -2210,6 +2210,7 @@ hr {
     padding: 10px 0;
     margin-top: 10px; /* Add top margin to separate from image */
 	margin-bottom: 20px;
+	clear: both
 }
   
   .dot {
