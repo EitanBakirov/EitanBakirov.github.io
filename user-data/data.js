@@ -144,7 +144,7 @@ export const featuredProjects = [
   {
     title: "National Insurance Form Parser",
     description: "Description of project 1. This can be multiple paragraphs explaining the project details, technologies used, and key features.",
-    repoName: "insurance-form-parser",
+    repoName: "national-insurance-form-parser",
     tags: ["Python", "FastAPI", "Machine Learning"],
     github: "https://github.com/EitanBakirov/insurance-form-parser",
     demo: "https://demo-link.com/project1", // Optional
@@ -152,6 +152,7 @@ export const featuredProjects = [
   {
     title: "Health Maintenance Organization Chatbot System",
     description: "Description of project 2. Add more details about this specific project here.",
+    repoName: "hmo-chatbot",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
     github: "https://github.com/EitanBakirov/hmo-chatbot",
     demo: "", // No demo link for this one
@@ -183,7 +184,7 @@ export const featuredProjects = [
   {
     title: "Bike Rental Demand Prediction",
     description: "A machine learning solution for predicting bicycle rental demand based on weather conditions, time of day, and seasonal factors. This project implements various regression models and time series analysis techniques to help bike-sharing services optimize their fleet management.",
-    repoName: "bicycle-rental-demand-prediction",
+    repoName: "bike-rental-demand-prediction",
     tags: ["Python", "Time Series Analysis", "Regression", "Feature Engineering", "Data Visualization"],
     github: "https://github.com/EitanBakirov/bicycle-rental-demand-prediction",
     demo: ""
