@@ -2181,14 +2181,14 @@ hr {
     position: relative;
     margin: 20px 0 10px 0;
     max-height: 50vh;
-    overflow: hidden;
+    overflow: visible;
     border-radius: 8px;
     padding-bottom: 30px; /* Add space for dots */
 }
   
   .carousel img {
     width: 100%;
-    height: calc(60vh - 20px); /* Subtract padding for dots */
+    height: 50vh; /* Adjusted height for better visibility */
     object-fit: contain;
     display: none;
     border-radius: 8px;
@@ -2199,17 +2199,16 @@ hr {
 	display: block;
   }
   
-/* Carousel Dots - Fixed Position */
+/* Carousel Dots - Below Images */
 .carousel-dots {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative; /* Changed from absolute to relative */
+    bottom: auto; /* Remove absolute positioning */
+    left: auto;
+    right: auto;
     text-align: center;
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    background: transparent; /* Remove background */
     padding: 10px 0;
-    margin: 0;
-    z-index: 10; /* Ensure dots stay on top */
+    margin-top: 10px; /* Add top margin to separate from image */
 }
   
   .dot {
