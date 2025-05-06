@@ -133,36 +133,34 @@ async function populateProjects() {
     
     for (const project of featuredProjects) {
         try {
-            // Fetch screenshots from GitHub
+            // Fetch screenshots
             const screenshots = await fetchRepoScreenshots(project.repoName);
+            const thumbnail = screenshots.length > 0 ? screenshots[0].url : './images/default-project-thumb.png';
             
-            // Set thumbnail as first screenshot or use default
-            const thumbnail = screenshots.length > 0 ? 
-                screenshots[0].url : 
-                './images/default-project-thumb.png';
-            
-            // Create project card
+            // Create project card with new layout
             const projectCard = document.createElement('div');
             projectCard.className = 'col-md-4 animate-box';
             projectCard.setAttribute('data-animate-effect', 'fadeInLeft');
             
-            // Store screenshots with project data for modal
+            // Store data for modal
             const projectData = {
                 ...project,
                 images: screenshots.map(s => s.url),
                 thumbnail: thumbnail
             };
             
+            // Get short description (first sentence)
+            const shortDesc = project.description.split('.')[0] + '.';
+            
             projectCard.innerHTML = `
                 <div class="project-card" data-project='${JSON.stringify(projectData)}'>
-                    <div class="project-image">
-                        <img src="${thumbnail}" alt="${project.title}">
-                        <div class="project-overlay">
-                            <h3>${project.title}</h3>
-                            <div class="project-tags">
-                                ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
-                            </div>
-                            <div class="project-view">View Details</div>
+                    <div class="project-card-content">
+                        <div class="project-image">
+                            <img src="${thumbnail}" alt="${project.title}">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">${project.title}</h3>
+                            <p class="project-description">${shortDesc}</p>
                         </div>
                     </div>
                 </div>
@@ -174,7 +172,6 @@ async function populateProjects() {
         }
     }
     
-    // Add event listeners to cards
     addProjectCardListeners();
 }
 
