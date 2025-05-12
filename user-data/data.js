@@ -192,7 +192,7 @@ export const featuredProjects = [
   {
     title: "TV Show Dialog Classification",
     description: "An NLP project that analyzes and classifies TV show dialogues using deep learning techniques. The system identifies speaker emotions, conversation topics, and character relationships. Features include sentiment analysis and topic modeling across different TV show genres.",
-    repoName: "tv-show-dialogue-classification",
+    repoName: "tv-show-dialog-classification",
     tags: ["NLP", "Deep Learning", "BERT", "Sentiment Analysis", "Text Classification"],
     github: "https://github.com/EitanBakirov/tv-show-dialogue-classification",
     demo: ""
