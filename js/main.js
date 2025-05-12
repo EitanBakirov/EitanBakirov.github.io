@@ -81,7 +81,7 @@
           navActive($(this.element).data("section"));
         }
       },
-      { offset: "50%" }
+      { offset: "25%" }  // Changed from 150px to 25% of viewport height
     );
     $section.waypoint(
       function (direction) {
@@ -89,10 +89,7 @@
           navActive($(this.element).data("section"));
         }
       },
-      { offset: function () {
-          return -$(this.element).height() + 155;
-        }
-      }
+      { offset: "0" }  // Changed to trigger when section top hits viewport top
     );
   };
 
