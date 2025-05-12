@@ -134,7 +134,7 @@ export const footer = [
 
 export const featuredProjects = [
   {
-    title: "CodeMatch - LLM-Powered Code Similarity Detection",
+    title: "LLM-Powered Code Similarity Detection",
     shortDescription: "LLM-powered code similarity detection web application.",
     description: "CodeMatch is an innovative web application that leverages the power of Large Language Models (LLMs) to detect and verify code originality. It utilizes embeddings and a searchable vector database (Qdrant) to provide accurate results.",
     repoName: "code-match",
