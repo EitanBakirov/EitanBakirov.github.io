@@ -171,8 +171,8 @@ export const featuredProjects = [
   },
   {
     title: "Boston Airbnb Analysis",
-    shortDescription: "A comprehensive analysis of Boston's Airbnb market using data science techniques. This project includes price prediction modeling, neighborhood analysis, and seasonal trends investigation using Python's data science stack.",
-    description: "A comprehensive analysis of Boston\'s Airbnb market using data science techniques. This project includes price prediction modeling, neighborhood analysis, and seasonal trends investigation using Python's data science stack.",
+    shortDescription: "A comprehensive analysis of Boston\'s Airbnb market using data science techniques. This project includes price prediction modeling, neighborhood analysis, and seasonal trends investigation using Python\'s data science stack.",
+    description: "A comprehensive analysis of Boston\'s Airbnb market using data science techniques. This project includes price prediction modeling, neighborhood analysis, and seasonal trends investigation using Python\'s data science stack.",
     repoName: "boston-airbnb-analysis",
     tags: ["Python", "Pandas", "Scikit-learn", "Data Visualization", "Statistical Analysis"],
     github: "https://github.com/EitanBakirov/boston-airbnb-analysis",
