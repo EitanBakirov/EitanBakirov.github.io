@@ -1954,7 +1954,7 @@ span {
     vertical-align: middle;
     white-space: nowrap;
     text-align: center;
-    background-color: rgb(164, 164, 164) !important;
+    /*background-color: rgb(164, 164, 164) !important; */
     border-radius: 10px;
 }
 
@@ -1965,7 +1965,6 @@ span {
     border-radius: 4px;
     font-size: 12px;
     font-weight: 500;
-    text-transform: uppercase;
     transition: all 0.3s ease;
 }
 
@@ -2294,7 +2293,7 @@ hr {
   .btn-demo {
 	display: inline-block;
 	background-color: #005f99;
-	color: white;
+	color: white !important;;
 	padding: 10px 20px;
 	border-radius: 25px;
 	text-decoration: none;
@@ -2304,7 +2303,7 @@ hr {
   
   .btn-demo:hover {
 	background-color: #004c7a;
-	color: white;
+	color: white !important;; 
 	text-decoration: none;
   }
   
