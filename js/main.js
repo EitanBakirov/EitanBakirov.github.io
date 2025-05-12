@@ -74,23 +74,36 @@
 
   // Highlight active navigation link while scrolling
   var navigationSection = function () {
-    var $section = $("section[data-section]");
-    $section.waypoint(
-      function (direction) {
-        if (direction === "down") {
-          navActive($(this.element).data("section"));
-        }
-      },
-      { offset: "50%" }  // Changed from 150px to 50% of viewport height
-    );
-    $section.waypoint(
-      function (direction) {
-        if (direction === "up") {
-          navActive($(this.element).data("section"));
-        }
-      },
-      { offset: "-50%" }  // Changed to trigger when section top hits viewport top
-    );
+    // Wait for dynamic content to load
+    setTimeout(() => {
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                // Get the corresponding navigation item
+                const id = entry.target.getAttribute('data-section');
+                const navItem = document.querySelector(`#navbar a[data-nav-section="${id}"]`);
+                
+                if (entry.intersectionRatio > 0.5) {
+                    // Remove active class from all nav items
+                    document.querySelectorAll('#navbar a').forEach(link => {
+                        link.closest('li').classList.remove('active');
+                    });
+                    // Add active class to current nav item
+                    if (navItem) {
+                        navItem.closest('li').classList.add('active');
+                    }
+                }
+            });
+        }, {
+            // Options
+            threshold: 0.5,
+            rootMargin: '0px'
+        });
+
+        // Observe all sections
+        document.querySelectorAll('section[data-section]').forEach(section => {
+            io.observe(section);
+        });
+    }, 1000); // Wait 1 second for content to load
   };
 
   // Helper to activate current section in the navbar
