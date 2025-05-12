@@ -135,7 +135,7 @@ export const footer = [
 export const featuredProjects = [
   {
     title: "CodeMatch - LLM-Powered Code Similarity Detection",
-    shortDescription: "An innovative web application that leverages the power of Large Language Models (LLMs) to detect and verify code originality. It utilizes embeddings and a searchable vector database (Qdrant) to provide accurate results.",
+    shortDescription: "LLM-powered code similarity detection web application.",
     description: "CodeMatch is an innovative web application that leverages the power of Large Language Models (LLMs) to detect and verify code originality. It utilizes embeddings and a searchable vector database (Qdrant) to provide accurate results.",
     repoName: "code-match",
     tags: ["Python", "FastAPI", "Machine Learning"],
@@ -144,7 +144,7 @@ export const featuredProjects = [
   },
   {
     title: "National Insurance Form Parser",
-    shortDescription: "A web application that utilizes machine learning to extract and analyze data from national insurance forms. The project includes a user-friendly interface built with FastAPI and Streamlit, allowing users to upload forms and receive structured data in return.",
+    shortDescription: "ML-based insurance form data extraction tool.",
     description: "Description of project 1. This can be multiple paragraphs explaining the project details, technologies used, and key features.",
     repoName: "national-insurance-form-parser",
     tags: ["Python", "FastAPI", "Machine Learning"],
@@ -153,7 +153,7 @@ export const featuredProjects = [
   },
   {
     title: "Health Maintenance Organization Chatbot System",
-    shortDescription: "A chatbot system designed to assist users in navigating health maintenance organization services. The system utilizes natural language processing and machine learning techniques to provide accurate and relevant responses to user queries.",
+    shortDescription: "AI chatbot for healthcare service navigation.",
     description: "Description of project 2. Add more details about this specific project here.",
     repoName: "hmo-chatbot",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
@@ -162,7 +162,7 @@ export const featuredProjects = [
   },
   {
     title: "Malicious File Classification",
-    shortDescription: "A machine learning application designed to analyze and classify files as malicious or benign using static analysis features. This project combines robust data science techniques with a user-friendly web interface built using Streamlit.",
+    shortDescription: "Machine learning system for detecting malicious files.",
     description: "A machine learning application designed to analyze and classify files as malicious or benign using static analysis features. This project combines robust data science techniques with a user-friendly web interface built using Streamlit.",
     repoName: "malicious-file-classification-app",
     tags: ["TensorFlow", "Deep Learning", "NLP"],
@@ -171,8 +171,8 @@ export const featuredProjects = [
   },
   {
     title: "Boston Airbnb Analysis",
-    shortDescription: "A comprehensive analysis of Boston\'s Airbnb market using data science techniques. This project includes price prediction modeling, neighborhood analysis, and seasonal trends investigation using Python\'s data science stack.",
-    description: "A comprehensive analysis of Boston\'s Airbnb market using data science techniques. This project includes price prediction modeling, neighborhood analysis, and seasonal trends investigation using Python\'s data science stack.",
+    shortDescription: "Data analysis of Boston Airbnb market trends.",
+    description: "A comprehensive analysis of Boston's Airbnb market using data science techniques. This project includes price prediction modeling, neighborhood analysis, and seasonal trends investigation using Python's data science stack.",
     repoName: "boston-airbnb-analysis",
     tags: ["Python", "Pandas", "Scikit-learn", "Data Visualization", "Statistical Analysis"],
     github: "https://github.com/EitanBakirov/boston-airbnb-analysis",
@@ -180,7 +180,7 @@ export const featuredProjects = [
   },
   {
     title: "Music Recommendation System",
-    shortDescription: "A personalized music recommendation engine that uses collaborative filtering and content-based approaches. The system analyzes user listening histories, song features, and musical patterns to suggest relevant tracks. Built with Python and integrated with the Spotify API for real-world music data.",
+    shortDescription: "AI-powered music recommendation engine using Spotify data.",
     description: "A personalized music recommendation engine that uses collaborative filtering and content-based approaches. The system analyzes user listening histories, song features, and musical patterns to suggest relevant tracks. Built with Python and integrated with the Spotify API for real-world music data.",
     repoName: "music-recommendation-system",
     tags: ["Python", "Collaborative Filtering", "Machine Learning", "Spotify API", "Feature Engineering"],
@@ -189,7 +189,7 @@ export const featuredProjects = [
   },
   {
     title: "Bike Rental Demand Prediction",
-    shortDescription: "A machine learning solution for predicting bicycle rental demand based on weather conditions, time of day, and seasonal factors. This project implements various regression models and time series analysis techniques to help bike-sharing services optimize their fleet management.",
+    shortDescription: "ML system predicting bike rental demand patterns.",
     description: "A machine learning solution for predicting bicycle rental demand based on weather conditions, time of day, and seasonal factors. This project implements various regression models and time series analysis techniques to help bike-sharing services optimize their fleet management.",
     repoName: "bike-rental-demand-prediction",
     tags: ["Python", "Time Series Analysis", "Regression", "Feature Engineering", "Data Visualization"],
@@ -198,7 +198,7 @@ export const featuredProjects = [
   },
   {
     title: "TV Show Dialog Classification",
-    shortDescription: "An NLP project that analyzes and classifies TV show dialogues using deep learning techniques. The system identifies speaker emotions, conversation topics, and character relationships. Features include sentiment analysis and topic modeling across different TV show genres.",
+    shortDescription: "NLP analysis of TV show character dialogues.",
     description: "An NLP project that analyzes and classifies TV show dialogues using deep learning techniques. The system identifies speaker emotions, conversation topics, and character relationships. Features include sentiment analysis and topic modeling across different TV show genres.",
     repoName: "tv-show-dialog-classification",
     tags: ["NLP", "Deep Learning", "BERT", "Sentiment Analysis", "Text Classification"],
@@ -207,7 +207,7 @@ export const featuredProjects = [
   },
   {
     title: "World Happiness Report Analysis",
-    shortDescription: "A data-driven exploration of global happiness metrics using the World Happiness Report dataset. This analysis investigates factors contributing to national happiness scores, including economic indicators, social support, and healthcare quality. Interactive visualizations highlight global patterns and trends.",
+    shortDescription: "Global happiness factors data analysis project.",
     description: "A data-driven exploration of global happiness metrics using the World Happiness Report dataset. This analysis investigates factors contributing to national happiness scores, including economic indicators, social support, and healthcare quality. Interactive visualizations highlight global patterns and trends.",
     repoName: "world-happiness-analysis",
     tags: ["Python", "Data Analysis", "Statistical Modeling", "Geospatial Visualization", "Dashboard Development"],
@@ -216,8 +216,8 @@ export const featuredProjects = [
   },
   {
     title: "Slug Wars",
-    shortDescription: "An interactive game developed using Python and Pygame that demonstrates object-oriented programming principles. Features include dynamic enemy AI, power-up systems, and score tracking. The project showcases game development concepts while maintaining clean code architecture.",
-    description: "An interactive game developed using Python and Pygame that demonstrates object-oriented programming principles. Features include dynamic enemy AI, power-up systems, and score tracking. The project showcases game development concepts while maintaining clean code architecture.",
+    shortDescription: "Turn-based artillery game with destructible environments.",
+    description: "A 2D turn-based artillery strategy game developed with Monogame and XNA framework. Players control teams of armed slugs in destructible environments, using various weapons to eliminate opponents. This project demonstrates OOP principles and game development concepts learned during Software Engineering studies at Hakfar Hayarok College.",
     repoName: "slug-wars",
     tags: ["Python", "Pygame", "OOP", "Game Development", "Software Design"],
     github: "https://github.com/EitanBakirov/slug-wars",

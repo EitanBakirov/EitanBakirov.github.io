@@ -153,7 +153,7 @@ async function populateProjects() {
             const shortDesc = project.shortDescription;
             
             projectCard.innerHTML = `
-                <div class="project-card" data-project='${JSON.stringify(projectData)}'>
+                <div class="project-card" data-project="${encodeURIComponent(JSON.stringify(projectData))}">
                     <div class="project-card-content">
                         <div class="project-image">
                             <img src="${thumbnail}" alt="${project.title}">
@@ -179,7 +179,8 @@ function addProjectCardListeners() {
     const cards = document.querySelectorAll('.project-card');
     cards.forEach(card => {
         card.addEventListener('click', function() {
-            const projectData = JSON.parse(this.getAttribute('data-project'));
+            const encoded = this.getAttribute('data-project');
+            const projectData = JSON.parse(decodeURIComponent(encoded));
             openProjectModal(projectData);
         });
     });
