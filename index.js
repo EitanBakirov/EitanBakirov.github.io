@@ -160,7 +160,7 @@ async function populateProjects() {
                         </div>
                         <div class="project-info">
                             <h3 class="project-title"><strong>${project.title}</strong></h3>
-                            <p class="project-description large-text">>${shortDesc}</p>
+                            <p class="project-description large-text">${shortDesc}</p>
                         </div>
                     </div>
                 </div>
