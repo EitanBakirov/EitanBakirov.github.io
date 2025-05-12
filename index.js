@@ -6,6 +6,7 @@ import {
   featuredProjects, // Import the featured projects
 } from "./user-data/data.js";
 import { fetchRepoScreenshots } from './js/github-api.js';
+import { getTagColor } from './user-data/tag-colors.js'; // Add import at the top
 
 function populateBio(items, id) {
   const bioTag = document.getElementById(id);
@@ -56,6 +57,8 @@ function populateExpEdu(items, id) {
       const span = document.createElement("span");
       span.className = "badge";
       span.innerHTML = tag;
+      span.style.backgroundColor = getTagColor(tag);
+      span.style.color = "#ffffff";  // White text for better contrast
       tagsDiv.append(span);
     });
     label.append(tagsDiv);
@@ -199,6 +202,8 @@ function openProjectModal(project) {
     const tagSpan = document.createElement('span');
     tagSpan.className = 'modal-tag';
     tagSpan.textContent = tag;
+    tagSpan.style.backgroundColor = getTagColor(tag);
+    tagSpan.style.color = "#ffffff";  // White text for better contrast
     tagsContainer.appendChild(tagSpan);
   });
   
