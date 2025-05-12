@@ -159,7 +159,7 @@ async function populateProjects() {
                             <img src="${thumbnail}" alt="${project.title}">
                         </div>
                         <div class="project-info">
-                            <h3 class="project-title"><strong>${project.title}</strong></h3>
+                            <h3 class="project-title">${project.title}</h3>
                             <p class="project-description large-text">${shortDesc}</p>
                         </div>
                     </div>
