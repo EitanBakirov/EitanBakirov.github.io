@@ -150,7 +150,7 @@ async function populateProjects() {
             };
             
             // Get short description (first sentence)
-            const shortDesc = project.description.split('.')[0] + '.';
+            const shortDesc = project.shortDescription;
             
             projectCard.innerHTML = `
                 <div class="project-card" data-project='${JSON.stringify(projectData)}'>
