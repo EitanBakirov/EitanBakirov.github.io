@@ -140,27 +140,7 @@ export const featuredProjects = [
   {
     title: "LLM-Powered Code Similarity Detection",
     shortDescription: "LLM-powered code similarity detection web application.",
-    description: `A comprehensive system for detecting code similarity and potential code clones using Large Language Models (LLMs). The project consists of two main components:
-
-<br><br>
-1. Benchmark System:
-<br>
-- Evaluates various LLMs (CodeBERT, GraphCodeBERT, CodeT5, Qwen) for code similarity detection
-- Implements two evaluation methods: Direct Clone Comparison and Global Clone Search
-- Features multiprocessing, comprehensive logging, and detailed performance metrics
-- Generates embeddings and evaluates model accuracy using Top-5 and Top-1 hit rates
-
-<br><br>
-2. Web Application:
-<br>
-- Vue.js frontend for code input and similar code display
-- FastAPI backend for handling requests and LLM processing
-- Qdrant vector database for efficient similarity search
-- Docker containerization for easy deployment
-- Comprehensive logging and monitoring system
-
-<br><br>
-The system achieves high accuracy in detecting similar code across different programming languages and clone types, making it valuable for code duplication detection and license compliance checking.`,
+    description: "A comprehensive system for detecting code similarity using Large Language Models (LLMs), featuring an extensive benchmark framework that evaluates multiple models (CodeBERT, GraphCodeBERT, CodeT5, Qwen) through both direct clone comparison and global search methodologies. The benchmark achieves high accuracy rates (Top-5 and Top-1 metrics) across different programming languages and clone types. The production system includes a Vue.js frontend for code input, FastAPI backend for LLM processing, Qdrant vector database for efficient similarity search, and Docker containerization for deployment. The complete solution provides valuable tools for code duplication detection and license compliance verification.",
     repoName: "code-match",
     tags: [
       "Python",
