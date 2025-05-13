@@ -2355,3 +2355,18 @@ hr {
     object-fit: contain; /* Change to contain to maintain aspect ratio */
     background: #f5f5f5; /* Light background for transparent images */
 }
+
+
+.social-links a {
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
+
+/* Dark mode support */
+.dark-mode .social-links a .fa-github-square {
+    color: #fff;
+}
