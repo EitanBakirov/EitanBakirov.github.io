@@ -203,10 +203,19 @@ export const featuredProjects = [
   },
   {
     title: "Boston Airbnb Analysis",
-    shortDescription: "Data analysis of Boston Airbnb market trends.",
-    description: "A comprehensive analysis of Boston's Airbnb market using data science techniques. This project includes price prediction modeling, neighborhood analysis, and seasonal trends investigation using Python's data science stack.",
+    shortDescription: "Data-driven optimization of Airbnb performance in Boston.",
+    description: "A comprehensive analysis of Boston's Airbnb market focusing on property types, pricing strategies, occupancy rates, and guest satisfaction. The study employs key metrics like RevPAN (Revenue Per Available Night) to assess revenue efficiency and guide pricing decisions. Key findings include pricing anomalies during events like the Boston Marathon, neighborhood performance variations, and the impact of property diversity. The analysis provides actionable recommendations for hosts including RevPAN-based pricing alerts, neighborhood-specific strategies, and event-driven pricing optimization to improve revenue while maintaining guest satisfaction.",
     repoName: "boston-airbnb-analysis",
-    tags: ["Python", "Pandas", "Scikit-learn", "Data Visualization", "Statistical Analysis"],
+    tags: [
+      "R",
+      "dplyr",
+      "ggplot2",
+      "tidyverse",
+      "Data Analysis",
+      "Statistical Analysis",
+      "Business Analytics",
+      "Data Visualization"
+    ],
     github: "https://github.com/EitanBakirov/boston-airbnb-analysis",
     demo: ""
   },
