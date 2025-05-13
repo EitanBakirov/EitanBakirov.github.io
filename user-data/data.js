@@ -75,7 +75,11 @@ export const education = [
     title: "B.Sc. in Digital Sciences for High-Tech and Economics",
     duration: "2021 - 2024",
     subtitle: "Tel Aviv University",
-    details: [],
+    details: [
+      "Strong academic emphasis on Big Data and computer-related subjects, statistics, machine learning, deep learning and data science, databases and SQL, data structures, algorithms, data analysis, as well as programming in C, R and Python.",
+      "Strong grasp of economic theories, principles, and concepts",
+      "Applied knowledge learnt through studies in various Machine Learning and Data Analysis projects"
+    ],
     tags: [
       "Statistics",
       "Machine Learning",
@@ -136,36 +140,79 @@ export const featuredProjects = [
   {
     title: "LLM-Powered Code Similarity Detection",
     shortDescription: "LLM-powered code similarity detection web application.",
-    description: "CodeMatch is an innovative web application that leverages the power of Large Language Models (LLMs) to detect and verify code originality. It utilizes embeddings and a searchable vector database (Qdrant) to provide accurate results.",
+    description: `A comprehensive system for detecting code similarity and potential code clones using Large Language Models (LLMs). The project consists of two main components:
+
+1. Benchmark System:
+- Evaluates various LLMs (CodeBERT, GraphCodeBERT, CodeT5, Qwen) for code similarity detection
+- Implements two evaluation methods: Direct Clone Comparison and Global Clone Search
+- Features multiprocessing, comprehensive logging, and detailed performance metrics
+- Generates embeddings and evaluates model accuracy using Top-5 and Top-1 hit rates
+
+2. Web Application:
+- Vue.js frontend for code input and similar code display
+- FastAPI backend for handling requests and LLM processing
+- Qdrant vector database for efficient similarity search
+- Docker containerization for easy deployment
+- Comprehensive logging and monitoring system
+
+The system achieves high accuracy in detecting similar code across different programming languages and clone types, making it valuable for code duplication detection and license compliance checking.`,
     repoName: "code-match",
-    tags: ["Python", "FastAPI", "Machine Learning"],
+    tags: [
+      "Python",
+      "FastAPI",
+      "Vue.js",
+      "Docker",
+      "LLMs",
+      "HuggingFace",
+      "Qdrant",
+      "Benchmarking",
+      "Code Analysis"
+    ],
     github: "https://github.com/codematch-llm",
-    demo: "https://demo-link.com/project1", // Optional
+    demo: "https://demo-link.com/project1"
   },
   {
     title: "National Insurance Form Parser",
     shortDescription: "ML-based insurance form data extraction tool.",
-    description: "Description of project 1. This can be multiple paragraphs explaining the project details, technologies used, and key features.",
+    description: "A microservice-based Streamlit application for extracting structured JSON data from scanned Israeli National Insurance (ביטוח לאומי) forms. The system leverages Azure Document Intelligence for OCR and Azure OpenAI (GPT-4) for field extraction, supporting both Hebrew and English documents. Features include automatic language detection, structured JSON output, comprehensive logging, and performance monitoring. Built with Python, Streamlit, and Docker for scalable deployment.",
     repoName: "national-insurance-form-parser",
-    tags: ["Python", "FastAPI", "Machine Learning"],
+    tags: ["Python", "Azure", "OpenAI", "Docker", "Streamlit", "OCR"],
     github: "https://github.com/EitanBakirov/insurance-form-parser",
     demo: "https://demo-link.com/project1",
   },
   {
     title: "Health Maintenance Organization Chatbot System",
     shortDescription: "AI chatbot for healthcare service navigation.",
-    description: "Description of project 2. Add more details about this specific project here.",
+    description: "A microservice-based chatbot system for Israeli HMO (Health Fund) service inquiries, leveraging RAG (Retrieval Augmented Generation) and Azure OpenAI for providing accurate, personalized responses. The system features bilingual support (Hebrew/English), two-phase interaction for user details and service inquiries, RAG-powered answers from HMO documents, and real-time performance monitoring. Built with FastAPI backend, Streamlit frontend, and containerized with Docker for scalable deployment. Includes comprehensive logging, language-aware response formatting, and vector-based document retrieval for enhanced accuracy.",
     repoName: "hmo-chatbot",
-    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    tags: [
+      "Python",
+      "FastAPI",
+      "Azure",
+      "OpenAI",
+      "Docker",
+      "Streamlit",
+      "NLP",
+      "RAG"
+    ],
     github: "https://github.com/EitanBakirov/hmo-chatbot",
-    demo: "", 
+    demo: ""
   },
   {
     title: "Malicious File Classification",
     shortDescription: "Machine learning system for detecting malicious files.",
-    description: "A machine learning application designed to analyze and classify files as malicious or benign using static analysis features. This project combines robust data science techniques with a user-friendly web interface built using Streamlit.",
+    description: "A comprehensive machine learning application for classifying files as malicious or benign using static analysis features. The project combines a robust data science pipeline (including EDA, preprocessing, model training with Random Forest and KNN) with an interactive Streamlit interface. Features include real-time file analysis, adjustable detection thresholds, model performance metrics, and extensive data preprocessing (handling missing values, categorical features, and dimensionality reduction). Achieved high AUC scores through cross-validation and hyperparameter tuning.",
     repoName: "malicious-file-classification-app",
-    tags: ["TensorFlow", "Deep Learning", "NLP"],
+    tags: [
+      "Python",
+      "Machine Learning",
+      "Random Forest",
+      "Streamlit",
+      "Data Analysis",
+      "Statistical Analysis",
+      "Data Preprocessing",
+      "Model Evaluation"
+    ],
     github: "https://github.com/EitanBakirov/malicious-file-classification-app",
     demo: "",
   },
@@ -183,7 +230,7 @@ export const featuredProjects = [
     shortDescription: "AI-powered music recommendation engine using Spotify data.",
     description: "A personalized music recommendation engine that uses collaborative filtering and content-based approaches. The system analyzes user listening histories, song features, and musical patterns to suggest relevant tracks. Built with Python and integrated with the Spotify API for real-world music data.",
     repoName: "music-recommendation-system",
-    tags: ["Python", "Collaborative Filtering", "Machine Learning", "Spotify API", "Feature Engineering"],
+    tags: ["Python", "Collaborative Filtering", "Machine Learning", "Feature Engineering"],
     github: "https://github.com/EitanBakirov/music-recommendation-system",
     demo: ""
   },
@@ -201,7 +248,7 @@ export const featuredProjects = [
     shortDescription: "NLP analysis of TV show character dialogues.",
     description: "An NLP project that analyzes and classifies TV show dialogues using deep learning techniques. The system identifies speaker emotions, conversation topics, and character relationships. Features include sentiment analysis and topic modeling across different TV show genres.",
     repoName: "tv-show-dialog-classification",
-    tags: ["NLP", "Deep Learning", "BERT", "Sentiment Analysis", "Text Classification"],
+    tags: ["NLP", "Deep Learning", "Sentiment Analysis", "Text Classification"],
     github: "https://github.com/EitanBakirov/tv-show-dialogue-classification",
     demo: ""
   },
