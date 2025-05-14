@@ -881,7 +881,7 @@ body.offcanvas .colorlib-nav-toggle {
 	background: #c2c2c2;
 	width: 20px;
 	height: 20px;
-	margin-left: 10px;
+	margin-left: -6px;
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
