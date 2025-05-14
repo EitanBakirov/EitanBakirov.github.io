@@ -862,7 +862,7 @@ body.offcanvas .colorlib-nav-toggle {
     box-shadow: 0 0 0 5px #f2f3f7;
     line-height: 25px;  /* Changed from 40px to match height */
     float: left;
-    margin-left: -12.5px;  /* Half of width to center on line */
+    margin-left: 8px; 
     position: absolute;  /* Added */
     color: white;  /* Added for icon color */
 }
@@ -870,7 +870,6 @@ body.offcanvas .colorlib-nav-toggle {
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon i {
     position: relative;
     top: 3px;  /* Adjust vertical alignment of icon */
-	transform: translateY(-50%);
     font-size: 14px;  /* Adjust icon size */
     color: white;
 }
