@@ -212,7 +212,6 @@ export const featuredProjects = [
       "Random Forest",
       "Streamlit",
       "Data Analysis",
-      "Statistical Analysis",
       "Data Preprocessing",
       "Model Evaluation"
     ],
@@ -251,7 +250,7 @@ export const featuredProjects = [
     shortDescription: "ML system predicting bike rental demand patterns.",
     description: "A machine learning solution for predicting bicycle rental demand based on weather conditions, time of day, and seasonal factors. This project implements various regression models and time series analysis techniques to help bike-sharing services optimize their fleet management.",
     repoName: "bike-rental-demand-prediction",
-    tags: ["Python", "Time Series Analysis", "Regression", "Feature Engineering", "Data Visualization"],
+    tags: ["Python", "Machine Learning", "Time Series Analysis", "Regression", "Feature Engineering", "Data Visualization"],
     github: "https://github.com/EitanBakirov/bicycle-rental-demand-prediction",
     demo: ""
   },
@@ -269,7 +268,7 @@ export const featuredProjects = [
     shortDescription: "Global happiness factors data analysis project.",
     description: "A data-driven exploration of global happiness metrics using the World Happiness Report dataset. This analysis investigates factors contributing to national happiness scores, including economic indicators, social support, and healthcare quality. Interactive visualizations highlight global patterns and trends.",
     repoName: "world-happiness-analysis",
-    tags: ["Python", "Data Analysis", "Statistical Modeling", "Geospatial Visualization", "Dashboard Development"],
+    tags: ["R", "Data Analysis", "Statistical Analysis"],
     github: "https://github.com/EitanBakirov/world-happiness-analysis",
     demo: ""
   },
@@ -278,7 +277,7 @@ export const featuredProjects = [
     shortDescription: "Turn-based artillery game with destructible environments.",
     description: "A 2D turn-based artillery strategy game developed with Monogame and XNA framework. Players control teams of armed slugs in destructible environments, using various weapons to eliminate opponents. This project demonstrates OOP principles and game development concepts learned during Software Engineering studies at Hakfar Hayarok College.",
     repoName: "slug-wars",
-    tags: ["Python", "Pygame", "OOP", "Game Development", "Software Design"],
+    tags: ["C#", "Monogame", "XNA", "OOP", "Game Development", "Software Design"],
     github: "https://github.com/EitanBakirov/slug-wars",
     demo: ""
   },
