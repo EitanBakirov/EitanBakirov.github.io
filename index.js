@@ -210,10 +210,12 @@ function openProjectModal(project) {
   // Set buttons
   const githubLink = document.getElementById('modal-github');
   githubLink.href = project.github;
-  
+  githubLink.className = 'modal-button btn-github';
+
   const demoLink = document.getElementById('modal-demo');
   if (project.demo) {
     demoLink.href = project.demo;
+    demoLink.className = 'modal-button btn-demo';
     demoLink.style.display = 'inline-block';
   } else {
     demoLink.style.display = 'none';

@@ -2284,10 +2284,47 @@ hr {
   }
   
   .modal-buttons {
-	margin-top: 20px;
-	display: flex;
-	gap: 15px;
-  }
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.btn-github {
+  background-color: #24292e;
+  border: 2px solid #24292e;
+}
+
+.btn-demo {
+  background-color: #2c98f0;
+  border: 2px solid #2c98f0;
+}
+
+.modal-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-github:hover {
+  background-color: #1a1f24;
+  border-color: #1a1f24;
+}
+
+.btn-demo:hover {
+  background-color: #2570b4;
+  border-color: #2570b4;
+}
+
   
   .btn-demo {
 	display: inline-block;
