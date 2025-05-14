@@ -853,21 +853,25 @@ body.offcanvas .colorlib-nav-toggle {
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
-	display: block;
-	width: 25px;
-	height: 25px;
-	background: #2c98f0;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	border-radius: 50%;
-	text-align: center;
-	-moz-box-shadow: 0 0 0 5px #f2f3f7;
-	-webkit-box-shadow: 0 0 0 5px #f2f3f7;
-	box-shadow: 0 0 0 5px #f2f3f7;
-	line-height: 40px;
-	float: left;
-    /* left: -12.5px;  Half of the width to center it on the line */
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: #2c98f0;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 0 0 0 5px #f2f3f7;
+    line-height: 25px;  /* Changed from 40px to match height */
+    float: left;
+    margin-left: -12.5px;  /* Half of width to center on line */
+    position: absolute;  /* Added */
+    color: white;  /* Added for icon color */
+}
+
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon i {
+    position: relative;
+    top: 3px;  /* Adjust vertical alignment of icon */
+    font-size: 14px;  /* Adjust icon size */
+    color: white;
 }
 
 .timeline-centered

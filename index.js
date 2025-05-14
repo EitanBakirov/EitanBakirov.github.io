@@ -4,6 +4,7 @@ import {
   education,
   experience,
   featuredProjects, // Import the featured projects
+  socialLinks, // Import social links
 } from "./user-data/data.js";
 import { fetchRepoScreenshots } from './js/github-api.js';
 import { getTagColor } from './user-data/tag-colors.js'; // Add import at the top
@@ -276,6 +277,26 @@ function showSlide(index) {
   });
 }
 
+function populateSocialLinks() {
+  const container = document.getElementById('social-links-container');
+  
+  socialLinks.forEach(link => {
+    const a = document.createElement('a');
+    a.href = link.url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    
+    const i = document.createElement('i');
+    i.className = link.icon;
+    i.style.fontSize = "24px";
+    i.style.margin = "0 10px";
+    i.style.color = link.color;
+    
+    a.appendChild(i);
+    container.appendChild(a);
+  });
+}
+
 // Run all population functions
 populateBio(bio, "bio");
 populateExpEdu(experience, "experience");
@@ -286,6 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
   populateSkills();
   populateRepos();
   populateProjects(); // Add this line
+  populateSocialLinks(); // Add this line
   
   // Close modal when clicking the X
   document.querySelector('.close-modal').addEventListener('click', function() {

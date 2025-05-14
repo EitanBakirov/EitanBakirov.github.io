@@ -1,3 +1,20 @@
+export const socialLinks = [
+  {
+    platform: "LinkedIn",
+    url: "https://www.linkedin.com/in/eitan-bakirov/",
+    icon: "fab fa-linkedin",
+    color: "#0077B5"
+  },
+  {
+    platform: "GitHub",
+    url: "https://github.com/EitanBakirov",
+    icon: "fab fa-github",
+    color: "#333"
+  }
+  // Add more social links as needed
+];
+
+
 export const bio = [
   "Hello, I'm Eitan Bakirov!",
   "Aspiring <strong>Data Scientist</strong> at the beginning of my journey, passionate about solving real-world problems with data.",
@@ -32,7 +49,6 @@ export const skills = [
     items: ["Data Analysis", "Data Visualization", "Problem Solving", "Research"],
   },
 ];
-
 
 export const experience = [
   {
@@ -268,3 +284,5 @@ export const featuredProjects = [
   },
   // Add more projects as needed
 ];
+
+
