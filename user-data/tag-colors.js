@@ -62,6 +62,8 @@ export const tagColors = {
     "OpenAI": "#412991",
     "Qdrant": "#FF6B6B",
     "LLMs": "#7952B3",
+    "HuggingFace": "#FFD21E", 
+    "Streamlit": "#FF4B4B", 
     "Benchmarking": "#607D8B",
     "SAP": "#0FAAFF",
     "Training": "#4CAF50",

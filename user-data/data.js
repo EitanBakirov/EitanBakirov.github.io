@@ -154,7 +154,8 @@ export const featuredProjects = [
       "Code Analysis"
     ],
     github: "https://github.com/codematch-llm",
-    demo: "https://demo-link.com/project1"
+    demo: ""
+    //demo: "https://demo-link.com/project1"
   },
   {
     title: "National Insurance Form Parser",
@@ -163,7 +164,8 @@ export const featuredProjects = [
     repoName: "national-insurance-form-parser",
     tags: ["Python", "Azure", "OpenAI", "Docker", "Streamlit", "OCR"],
     github: "https://github.com/EitanBakirov/insurance-form-parser",
-    demo: "https://demo-link.com/project1",
+    demo: ""
+    //demo: "https://demo-link.com/project1"
   },
   {
     title: "Health Maintenance Organization Chatbot System",
