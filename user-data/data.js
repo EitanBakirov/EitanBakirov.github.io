@@ -17,9 +17,9 @@ export const socialLinks = [
 
 export const bio = [
   "Hello, I'm Eitan Bakirov!",
-  "Aspiring <strong>Data Scientist</strong> at the beginning of my journey, passionate about solving real-world problems with data.",
-  "I have completed several hands-on projects in machine learning, deep learning, and data analysis.",
-  "Eager to keep learning, building, and growing in the world of AI and data science.",
+  "A <strong>Data Scientist</strong> passionate about transforming complex data into actionable insights and solving real-world problems.",
+  "I focus on machine learning, deep learning, and data analysis, with hands-on experience in developing AI-powered solutions and data-driven applications.",
+  "Currently exploring new challenges in AI and data science, while continuously expanding my technical expertise."
 ];
 
 export const skills = [
