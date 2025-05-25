@@ -28,7 +28,7 @@ export const skills = [
     items: ["Python", "R", "SQL", "Git", "Docker"],
   },
   {
-    category: "Machine Learning & AI"
+    category: "Machine Learning & AI",
     items: [
       "Libraries & Frameworks (Scikit-learn, PyTorch, TensorFlow, Keras)",
       "Classical Machine Learning",
