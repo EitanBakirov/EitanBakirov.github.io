@@ -1,4 +1,5 @@
 export const tagColors = {
+    /* * This object maps tags to their corresponding colors.
     // Programming Languages
     "Python": "#3776AB",
     "SQL": "#FF9800",
@@ -67,6 +68,8 @@ export const tagColors = {
     "Benchmarking": "#607D8B",
     "SAP": "#0FAAFF",
     "Training": "#4CAF50",
+
+    */
 
     // Default color for undefined tags
     "default": "#888888"
