@@ -24,31 +24,69 @@ export const bio = [
 
 export const skills = [
   {
-    category: "Programming & Data Tools",
-    items: ["Python", "SQL", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+    category: "Programming Languages & Core Tools",
+    items: ["Python", "R", "SQL", "Git", "Docker"],
   },
   {
     category: "Machine Learning & AI",
     items: [
-      "Scikit-learn",
-      "PyTorch",
-      "TensorFlow",
-      "Hugging Face Transformers",
-      "Machine Learning",
+      "Libraries & Frameworks (Scikit-learn, PyTorch, TensorFlow, Keras)",
+      "Classical Machine Learning",
+      "Recommendation Systems",
       "Deep Learning",
       "Model Evaluation",
-      "Experimentation",
     ],
   },
   {
-    category: "Web & App Development",
-    items: ["FastAPI", "Streamlit", "Docker", "Git"],
+    category: "Data Processing & Analysis",
+    items: [
+      "NumPy",
+      "Pandas",
+      "Matplotlib",
+      "Seaborn",
+      "Data Visualization",
+      "Data Preprocessing",
+      "Exploratory Data Analysis",
+      "Statistical Analysis",
+    ],
   },
   {
-    category: "Data Science & Analysis",
-    items: ["Data Analysis", "Data Visualization", "Problem Solving", "Research"],
+    category: "Natural Language Processing",
+    items: [
+      "HuggingFace Transformers and Datasets",
+      "OpenAI API",
+      "RAG (Retrieval Augmented Generation)",
+      "LLMs (Large Language Models)",
+      "Text Processing",
+    ],
+  },
+  {
+    category: "Web Development & APIs",
+    items: [
+      "FastAPI",
+      "Vue.js",
+      "Streamlit",
+      "REST APIs",
+    ],
+  },
+  {
+    category: "Development Tools & Practices",
+    items: [
+      "Multi-processing",
+      "Logging",
+      "Monitoring",
+    ],
+  },
+  {
+    category: "Cloud & Databases",
+    items: [
+      "AWS",
+      "Azure",
+      "Vector Databases (Qdrant)",
+    ],
   },
 ];
+
 
 export const experience = [
   {
