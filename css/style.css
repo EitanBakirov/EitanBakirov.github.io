@@ -2118,6 +2118,59 @@ hr {
 }
 
 
+/* Project Filter Buttons */
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: 2px solid #2c98f0;
+  background: transparent;
+  color: #2c98f0;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.filter-btn:hover {
+  background: #2c98f0;
+  color: white;
+}
+
+.filter-btn.active {
+  background: #2c98f0;
+  color: white;
+}
+
+/* Dark mode styles */
+.dark-mode .filter-btn {
+  border-color: #2c98f0;
+  color: #2c98f0;
+}
+
+.dark-mode .filter-btn:hover,
+.dark-mode .filter-btn.active {
+  background: #2c98f0;
+  color: white;
+}
+
+/* Project cards transition */
+.project-card {
+  transition: all 0.3s ease;
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+
 /* Project Cards */
 .project-card {
     background: #fff;

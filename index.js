@@ -132,6 +132,8 @@ async function populateRepos() {
     }
 }
 
+
+
 async function populateProjects() {
     const projectsContainer = document.getElementById('projects-container');
     
@@ -297,6 +299,118 @@ function populateSocialLinks() {
   });
 }
 
+// Project filter mapping
+const projectFilters = {
+  'ml-dl': ['Machine Learning', 'Deep Learning', 'Random Forest', 'Neural Networks', 'PyTorch', 'TensorFlow', 'Scikit-learn'],
+  'llm': ['LLMs', 'OpenAI', 'RAG', 'HuggingFace', 'GPT'],
+  'application': ['Streamlit', 'FastAPI', 'Vue.js', 'Docker', 'Web Development'],
+  'data-analysis': ['Data Analysis', 'Statistical Analysis', 'R', 'Data Visualization', 'ggplot2'],
+  'recommendation': ['Collaborative Filtering', 'Recommendation Systems']
+};
+
+let activeFilters = ['all'];
+
+// Initialize filter functionality
+function initializeProjectFilters() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      
+      if (filter === 'all') {
+        // Clear all other filters when "All" is selected
+        activeFilters = ['all'];
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+      } else {
+        // Remove "All" if another filter is selected
+        if (activeFilters.includes('all')) {
+          activeFilters = [];
+          document.querySelector('[data-filter="all"]').classList.remove('active');
+        }
+        
+        // Toggle the current filter
+        if (activeFilters.includes(filter)) {
+          activeFilters = activeFilters.filter(f => f !== filter);
+          button.classList.remove('active');
+        } else {
+          activeFilters.push(filter);
+          button.classList.add('active');
+        }
+        
+        // If no filters are active, activate "All"
+        if (activeFilters.length === 0) {
+          activeFilters = ['all'];
+          document.querySelector('[data-filter="all"]').classList.add('active');
+        }
+      }
+      
+      filterProjects();
+    });
+  });
+}
+
+// Filter projects based on active filters
+function filterProjects() {
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  projectCards.forEach(card => {
+    const projectTags = JSON.parse(card.dataset.tags || '[]');
+    let shouldShow = false;
+    
+    if (activeFilters.includes('all')) {
+      shouldShow = true;
+    } else {
+      // Check if project matches any active filter
+      for (const filter of activeFilters) {
+        const filterTags = projectFilters[filter] || [];
+        if (projectTags.some(tag => filterTags.includes(tag))) {
+          shouldShow = true;
+          break;
+        }
+      }
+    }
+    
+    if (shouldShow) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+
+// Update your existing project rendering function to include data-tags
+function renderProjects() {
+  const container = document.getElementById('projects-container');
+  container.innerHTML = '';
+
+  featuredProjects.forEach((project, index) => {
+    const projectCard = document.createElement('div');
+    projectCard.className = 'col-md-6 animate-box project-card';
+    projectCard.dataset.tags = JSON.stringify(project.tags);
+    
+    // Your existing project card HTML here
+    projectCard.innerHTML = `
+      <div class="project">
+        <div class="project-image">
+          <img src="images/${project.repoName}/${project.repoName}.jpg" alt="${project.title}" onerror="this.src='images/placeholder.jpg'">
+        </div>
+        <div class="project-content">
+          <h3>${project.title}</h3>
+          <p>${project.shortDescription}</p>
+          <div class="project-tags">
+            ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+    
+    projectCard.addEventListener('click', () => openProjectModal(project));
+    container.appendChild(projectCard);
+  });
+}
+
 // Run all population functions
 populateBio(bio, "bio");
 populateExpEdu(experience, "experience");
@@ -309,6 +423,9 @@ document.addEventListener('DOMContentLoaded', () => {
   populateProjects(); // Add this line
   populateSocialLinks(); // Add this line
   
+  // Initialize project filters
+  initializeProjectFilters();
+  
   // Close modal when clicking the X
   document.querySelector('.close-modal').addEventListener('click', function() {
     document.getElementById('projectModal').style.display = 'none';
@@ -320,4 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('projectModal').style.display = 'none';
     }
   });
+  
+  // Render projects initially
+  renderProjects();
 });
