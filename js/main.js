@@ -134,10 +134,10 @@
     // Check for saved dark mode preference
     if (localStorage.getItem("darkMode") === "enabled") {
       body.classList.add("dark-mode");
-      button.textContent = "Light Mode";
+      // button.textContent = "Light Mode";
     } else {
       body.classList.remove("dark-mode");
-      button.textContent = "Dark Mode";
+      // button.textContent = "Dark Mode";
     }
 
     // Toggle dark mode on button click
@@ -145,11 +145,11 @@
       if (body.classList.contains("dark-mode")) {
         body.classList.remove("dark-mode");
         localStorage.setItem("darkMode", "disabled");
-        button.textContent = "Dark Mode";
+        // button.textContent = "Dark Mode";
       } else {
         body.classList.add("dark-mode");
         localStorage.setItem("darkMode", "enabled");
-        button.textContent = "Light Mode";
+        // button.textContent = "Light Mode";
       }
     });
   };
